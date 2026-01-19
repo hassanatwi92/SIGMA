@@ -52,7 +52,7 @@ header img{height:100%; object-fit:contain; position:relative; z-index:3;}
 
 <header>
   <video class="header-bg" autoplay loop muted playsinline>
-    <source src="images/header-bg.mp4" type="video/mp4">
+    <source src="header-bg.mp4" type="video/mp4">
   </video>
   <div class="header-overlay"></div>
   <img src="logo.png" alt="Sigma Insurance">
@@ -211,7 +211,7 @@ function renderFooter(){
   boxes.forEach(id=>{
     const box=document.createElement("div");
     box.className="box";
-    box.style.backgroundImage=`url(images/${id}.jpg)`;
+    box.style.backgroundImage=`url(${id}.jpg)`;
     box.innerHTML=`<span class="label">${translations[currentLang][id][0]}</span><span class="arrow">➜</span>`;
     box.onclick=()=>showContent(id);
     footer.appendChild(box);
@@ -229,7 +229,7 @@ function showContent(id){
         <button id="readMoreBtn">${currentLang==="ar"?"اقرأ المزيد":"Read More"}</button>
       </div>
       <div class="content-image">
-        <img src="images/${id}1.jpg" alt="${title}">
+        <img src="${id}1.jpg" alt="${title}">
       </div>
     </div>
   `;
@@ -274,16 +274,16 @@ showContent("home");
 <!-- ===== Social Icons ===== -->
 <div class="social-icons">
   <a href="https://wa.me/96103977867" target="_blank">
-    <img src="images/whatsapp.png" alt="WhatsApp">
+    <img src="whatsapp.png" alt="WhatsApp">
   </a>
   <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
-    <img src="images/instagram.png" alt="Instagram">
+    <img src="instagram.png" alt="Instagram">
   </a>
   <a href="https://www.facebook.com/YOUR_PAGE" target="_blank">
-    <img src="images/facebook.png" alt="Facebook">
+    <img src="facebook.png" alt="Facebook">
   </a>
   <a href="mailto:youremail@example.com" target="_blank">
-    <img src="images/email.png" alt="Email">
+    <img src="email.png" alt="Email">
   </a>
 </div>
 

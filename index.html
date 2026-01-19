@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sigma Insurance</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#fff;color:#0D3B66;}
+
+/* Header */
+header{
+  height:25vh; display:flex; align-items:center; justify-content:center; position:relative;
+  border-bottom:8px solid #1E6091; overflow:hidden;
+}
+.header-bg {position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;}
+.header-overlay {position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.1); z-index:2;}
+header img{height:100%; object-fit:contain; position:relative; z-index:3;}
+
+/* Language Dropdown */
+.lang-dropdown{position:absolute; top:15px; right:20px; z-index:4;}
+.lang-dropdown button{background:#0D3B66; color:#fff; border:none; padding:6px 10px; border-radius:4px; cursor:pointer;}
+.lang-menu{display:none; position:absolute; top:30px; right:0; background:#0D3B66; border-radius:4px; overflow:hidden; z-index:1000;}
+.lang-menu button{width:100%; background:none; color:#fff; border:none; padding:6px 10px; cursor:pointer;}
+.lang-menu button:hover{background:#1E6091}
+
+/* Main Content */
+.main-content{min-height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; background:#ccc;}
+.content-container{display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start;}
+.content-text{width:100%; background-color:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.content-image{width:320px; height:300px;}
+.content-image img{width:100%; height:100%; object-fit:cover; border-radius:20px;}
+
+/* Footer Squares */
+.footer{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; padding:10px; background-color: #1E6091;}
+.box{aspect-ratio:1/1; background-size:cover; background-position:center; border-radius:8px; position:relative; cursor:pointer; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease;}
+.box:hover{ transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,.25);}
+.box .label{position:absolute; inset:0; background:rgba(0,0,0,.45); display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; text-align:center; padding:8px;}
+.box .arrow{position:absolute; bottom:10px; right:12px; font-size:20px; color:white; opacity:0; transform:translateX(-5px); transition:all .3s ease;}
+.box:hover .arrow{ opacity:1; transform:translateX(5px); }
+
+/* Mobile */
+@media(max-width:767px){
+  .footer{ grid-template-columns:repeat(2,1fr); }
+  .content-container{ grid-template-columns: 1fr; } 
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <video class="header-bg" autoplay loop muted playsinline>
+    <source src="images/header-bg.mp4" type="video/mp4">
+  </video>
+  <div class="header-overlay"></div>
+  <img src="logo.png" alt="Sigma Insurance">
+  <div class="lang-dropdown">
+    <button id="langBtn">ENG ▼</button>
+    <div id="langMenu" class="lang-menu">
+      <button onclick="setLang('en')">ENG</button>
+      <button onclick="setLang('fr')">FR</button>
+      <button onclick="setLang('ar')">AR</button>
+    </div>
+  </div>
+</header>
+
+<div class="main-content">
+  <div id="main-text"></div>
+</div>
+
+<div class="footer" id="footer"></div>
+
+<script>
+// ===== Translations =====
+let currentLang="en";
+
+const translations={
+  en:{
+
+     home:["<h1>SIGMA</h1>","<h1>Professional Advice. Powerful Protection.</h1>","<h1>Professional Advice. Powerful Protection.</h1>"],
+    team:["Our Team","At Sigma Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people....","At Sigma Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people.<p>Our team is composed of qualified insurance professionals with diverse backgrounds in insurance consultancy, underwriting, risk management, and claims handling. Each member brings practical market knowledge and a client-focused mindset, ensuring that every solution we deliver is both technically sound and commercially effective.<p>We operate as one unified advisory team—working closely with clients, insurers, and reinsurers to provide clear guidance, timely support, and sustainable insurance strategies. Continuous professional development and adherence to international best practices are core to our culture, allowing us to remain aligned with evolving market standards.<p>What truly distinguishes our team is our commitment to long-term relationships. We take the time to understand each client’s unique needs and stand by them throughout the policy lifecycle—from initial assessment to claims resolution.<p>At Sigma, you are supported by a team that treats your risks as its own."],
+    services:["Services","In addition to our intermediary services, we offer: <p>Risk Assessment & Analysis.<p>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.<p>Insurance Program Design & Optimization...","In addition to our intermediary services, we offer: <p>Risk Assessment & Analysis.<p>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.<p>Insurance Program Design & Optimization.<p>Structuring customized coverage solutions, reviewing existing policies, and enhancing limits, conditions, and cost efficiency.<p>Market Negotiation & Placement Support.<p>Leveraging our strong relationships with insurers and reinsurers to secure optimal terms, coverage breadth, and pricing.<p>Claims Advisory & Critical Claims Support.<p>Providing hands-on assistance during claims, including complex and high-value cases, to protect our clients’ interests and accelerate resolutions.<p>Policy Review & Ongoing Advisory.<p>Continuous evaluation of insurance programs to ensure alignment with evolving risks, operations, and regulatory requirements.<p>Independent Second Opinions.<p>Offering professional reviews and advice even when coverage is placed outside our network. .<p>Our clients benefit from an advisory-driven approach built on transparency, technical expertise, and long-term partnership—ensuring insurance is a proactive risk management tool, not merely a transactional product."],
+    vision:["Our Vision","To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry....","To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry.<p>We aspire to redefine the role of the insurance advisor by moving beyond transactions toward long-term partnerships—where insurance becomes a proactive tool for protection, resilience, and sustainable growth."],
+    ceo:["CEO Biography","<strong>Ayman Ftouni</strong>.<br><br> Chief Executive Officer.<p>Ayman Ftouni is the Chief Executive Officer of Sigma Insurance Consultants, an independent advisory firm specializing in insurance consultancy, risk analysis, and strategic insurance solutions. With more than 21 years of professional experience, he has played an active role in the development and modernization of the insurance sector in Lebanon and across regional and international markets....","<strong>Ayman Ftouni</strong>.<br><br>Chief Executive Officer.<p>Ayman Ftouni is the Chief Executive Officer of Sigma Insurance Consultants, an independent advisory firm specializing in insurance consultancy, risk analysis, and strategic insurance solutions. With more than 21 years of professional experience, he has played an active role in the development and modernization of the insurance sector in Lebanon and across regional and international markets. .<p>Throughout his career, Mr. Ftouni has been committed to advancing insurance consultancy as a discipline grounded in accuracy, transparency, and client-centric advisory practice. His approach emphasizes informed decision-making, structured risk evaluation, and the design of insurance solutions aligned with clients' long-term financial and operational objectives.<p>Mr. Ftouni is the author of a specialized insurance research officially registered with the Intellectual Property Office at the Ministry of Economy (Registration No. 6377), reflecting his analytical approach and contribution to professional knowledge within the industry. He is also a member of the Million Dollar Round Table (MDRT), an internationally recognized association representing excellence and professionalism in the global insurance and financial services sector.<p>In addition to his advisory work, he holds multiple professional and leadership certifications in insurance and has collaborated with several international insurance companies in Lebanon and abroad. This exposure has enabled him to build strong relationships across insurance and reinsurance markets, supporting Sigma's ability to deliver well-structured, competitive, and reliable consultancy solutions.<p>As CEO of Sigma Insurance Consultants, Ayman Ftouni leads the firm with a clear philosophy: to act independently, uphold the highest professional standards, and provide clients with clear, accurate, and sustainable insurance strategies. His leadership continues to shape Sigma's reputation as a trusted consultancy partner for corporate, institutional, and individual clients seeking clarity in complex insurance environments."],
+  
+
+  contact:["Contact Us","Contact overview...","<strong>Phone:</strong> 01788669<br><strong>Email:</strong> management@sigma-leb.com<br><strong>Address:</strong> Beirut - Ramlet el Bayda - Middel East Blg. - 5th flr<br><strong>Location:</strong> <a href='https://maps.app.goo.gl/pTd21eFbWSFNJcnt7?g_st=ic' target='_blank'>View on Google Maps</a>"],
+
+why: [
+  "Why Choose Sigma",
+  "<strong>Independent & Client-Centric Advice</strong><p>We are not tied to any single insurer. Our recommendations are based solely on your risk profile and best interests...",
+  `
+  <p><strong>Independent & Client-Centric Advice</strong></p>
+  <p>We are not tied to any single insurer. Our recommendations are based solely on your risk profile and best interests.</p>
+
+  <p><strong>Beyond Policy Placement</strong></p>
+  <p>We go further than the traditional intermediary role—offering risk assessment, program design, policy optimization, and continuous advisory support.</p>
+
+  <p><strong>Strong Market & Reinsurance Access</strong></p>
+  <p>Our established relationships with leading local and international insurers and reinsurers allow us to negotiate superior coverage terms and pricing.</p>
+
+  <p><strong>Expert Claims Support</strong></p>
+  <p>We stand by our clients when it matters most, providing hands-on support during claims, including complex and high-value cases.</p>
+
+  <p><strong>Long-Term Partnership Approach</strong></p>
+  <p>We focus on building lasting relationships, adapting your insurance solutions as your risks and objectives evolve.</p>
+  `
+]},
+
+
+fr:{
+  team:[
+    "Notre Équipe",
+    "Chez Sigma Insurance Consultants, notre force réside dans l’expertise, l’intégrité et l’engagement de nos équipes....",
+    "Chez Sigma Insurance Consultants, notre force réside dans l’expertise, l’intégrité et l’engagement de nos équipes.<p>Notre équipe est composée de professionnels qualifiés de l’assurance, issus de divers domaines tels que le conseil en assurance, la souscription, la gestion des risques et le traitement des sinistres. Chaque membre apporte une connaissance pratique du marché et une approche centrée sur le client, garantissant des solutions techniquement solides et commercialement efficaces.<p>Nous opérons comme une seule équipe de conseil unifiée, en collaboration étroite avec les clients, les assureurs et les réassureurs, afin d’offrir des orientations claires, un soutien rapide et des stratégies d’assurance durables. Le développement professionnel continu et le respect des meilleures pratiques internationales font partie intégrante de notre culture.<p>Ce qui distingue véritablement notre équipe est notre engagement envers des relations à long terme. Nous prenons le temps de comprendre les besoins spécifiques de chaque client et les accompagnons tout au long du cycle de vie des polices, de l’évaluation initiale jusqu’au règlement des sinistres.<p>Chez Sigma, vous êtes soutenu par une équipe qui considère vos risques comme les siens."
+  ],
+
+  services:[
+    "Services",
+    "En plus de nos services d’intermédiation, nous proposons : <p>Évaluation et analyse des risques.<p>Identification des expositions et analyse des risques afin de concevoir des structures d’assurance efficaces et durables....",
+    "En plus de nos services d’intermédiation, nous proposons : <p>Évaluation et analyse des risques.<p>Identification des expositions et analyse des risques afin de concevoir des structures d’assurance efficaces et durables.<p>Conception et optimisation des programmes d’assurance.<p>Mise en place de solutions de couverture sur mesure, révision des polices existantes et amélioration des limites, conditions et de l’efficacité des coûts.<p>Négociation et placement sur le marché.<p>Exploitation de nos relations solides avec les assureurs et réassureurs afin d’obtenir des conditions, une couverture et une tarification optimales.<p>Conseil en sinistres et gestion des dossiers complexes.<p>Accompagnement pratique lors des sinistres, y compris les cas complexes et à forte valeur, afin de protéger les intérêts de nos clients et d’accélérer les règlements.<p>Revue des polices et conseil continu.<p>Évaluation permanente des programmes d’assurance pour garantir leur adéquation avec l’évolution des risques, des opérations et des exigences réglementaires.<p>Avis indépendants.<p>Fourniture d’analyses et de conseils professionnels même lorsque la couverture est placée en dehors de notre réseau.<p>Nos clients bénéficient d’une approche de conseil fondée sur la transparence, l’expertise technique et le partenariat à long terme."
+  ],
+
+  vision:[
+    "Notre Vision",
+    "Être un leader de confiance en conseil en assurance, reconnu pour la fourniture de solutions stratégiques, transparentes et centrées sur le client....",
+    "Être un leader de confiance en conseil en assurance, reconnu pour la fourniture de solutions stratégiques, transparentes et centrées sur le client, établissant de nouvelles normes de professionnalisme et de valeur dans le secteur de l’assurance.<p>Nous aspirons à redéfinir le rôle du conseiller en assurance en dépassant la simple transaction pour instaurer des partenariats à long terme, où l’assurance devient un outil proactif de protection, de résilience et de croissance durable."
+  ],
+
+  ceo:[
+    "Biographie du CEO",
+    "<strong>Ayman Ftouni</strong>.<br><br> Directeur Général.<p>Ayman Ftouni est le Directeur Général de Sigma Insurance Consultants, un cabinet de conseil indépendant spécialisé en assurance, analyse des risques et solutions stratégiques en assurance. Fort de plus de 21 ans d’expérience professionnelle, il a joué un rôle actif dans le développement et la modernisation du secteur de l’assurance au Liban et sur les marchés régionaux et internationaux....",
+    "<strong>Ayman Ftouni</strong>.<br><br>Directeur Général.<p>Ayman Ftouni est le Directeur Général de Sigma Insurance Consultants, un cabinet de conseil indépendant spécialisé en assurance, analyse des risques et solutions stratégiques en assurance. Fort de plus de 21 ans d’expérience professionnelle, il a contribué activement au développement et à la modernisation du secteur de l’assurance au Liban et à l’international.<p>Tout au long de sa carrière, M. Ftouni s’est engagé à promouvoir le conseil en assurance basé sur la précision, la transparence et une approche centrée sur le client. Sa philosophie repose sur une prise de décision éclairée, une évaluation structurée des risques et la conception de solutions alignées sur les objectifs financiers et opérationnels à long terme des clients.<p>M. Ftouni est l’auteur d’une recherche spécialisée en assurance officiellement enregistrée auprès du Bureau de la Propriété Intellectuelle du Ministère de l’Économie (N° 6377), témoignant de sa contribution analytique et professionnelle au secteur. Il est également membre du Million Dollar Round Table (MDRT).<p>Il détient plusieurs certifications professionnelles et de leadership et a collaboré avec de nombreuses compagnies d’assurance internationales, renforçant la capacité de Sigma à offrir des solutions compétitives et fiables.<p>En tant que CEO de Sigma Insurance Consultants, Ayman Ftouni dirige l’entreprise avec une philosophie claire : indépendance, excellence professionnelle et fourniture de stratégies d’assurance durables et transparentes."
+  ],
+
+  contact:["Contactez-nous","Bref contact.","<strong>Téléphone:</strong> 01788669<br><strong>Email:</strong> management@sigma-leb.com<br><strong>Adresse:</strong> Beirut - Ramlet el Bayda - Middel East Blg. - 5e étage<br><strong>Localisation:</strong> <a href='https://maps.app.goo.gl/pTd21eFbWSFNJcnt7?g_st=ic' target='_blank'>Voir sur Google Maps</a>"],
+
+  why:[
+    "Pourquoi choisir Sigma",
+    "<strong>Conseil indépendant et centré sur le client</strong><p>Nous ne sommes liés à aucun assureur spécifique...",
+    `
+    <p><strong>Conseil indépendant et centré sur le client</strong></p>
+    <p>Nous ne sommes liés à aucun assureur. Nos recommandations sont fondées exclusivement sur votre profil de risque et vos intérêts.</p>
+
+    <p><strong>Au-delà du placement de polices</strong></p>
+    <p>Nous dépassons le rôle traditionnel d’intermédiaire en proposant analyse des risques, conception de programmes et accompagnement continu.</p>
+
+    <p><strong>Accès solide au marché et à la réassurance</strong></p>
+    <p>Nos relations avec les assureurs et réassureurs locaux et internationaux nous permettent de négocier des conditions optimales.</p>
+
+    <p><strong>Expertise en gestion des sinistres</strong></p>
+    <p>Nous accompagnons nos clients dans les moments critiques, y compris les sinistres complexes et à forte valeur.</p>
+
+    <p><strong>Approche de partenariat à long terme</strong></p>
+    <p>Nous construisons des relations durables et adaptons les solutions d’assurance à l’évolution de vos risques.</p>
+    `
+  ]
+},
+
+
+  ar:{
+    team:["فريقنا","في سيغما للاستشارات التأمينية، تكمن قوتنا في خبرة فريقنا ونزاهته والتزامه...","في سيغما للاستشارات التأمينية، تكمن قوتنا في خبرة فريقنا ونزاهته والتزامه.<p>يتكوّن فريقنا من محترفين مؤهلين في مجال التأمين، يتمتعون بخلفيات متنوعة في الاستشارات التأمينية والاكتتاب وإدارة المخاطر وتسوية المطالبات. يساهم كل عضو بخبرة عملية في السوق ونهج يضع العميل في المقام الأول، مما يضمن حلولاً متينة تقنياً وفعّالة تجارياً.<p>نعمل كفريق استشاري موحّد بالتعاون الوثيق مع العملاء وشركات التأمين وإعادة التأمين، لتقديم إرشادات واضحة ودعم سريع واستراتيجيات تأمينية مستدامة. ويُعد التطوير المهني المستمر والالتزام بأفضل الممارسات الدولية جزءاً أساسياً من ثقافتنا.<p>ما يميز فريقنا حقاً هو التزامنا ببناء علاقات طويلة الأمد. نحرص على فهم احتياجات كل عميل ومرافقته طوال دورة حياة الوثيقة التأمينية، من التقييم الأولي حتى تسوية المطالبات.<p>في سيغما، يدعمك فريق يتعامل مع مخاطرِك كما لو كانت مخاطرَه الخاصة."],
+    services:["الخدمات","بالإضافة إلى خدمات الوساطة، نقدم: <p>تقييم وتحليل المخاطر.<p>تحديد مصادر المخاطر وتحليلها لتصميم هياكل تأمينية فعّالة ومستدامة......","بالإضافة إلى خدمات الوساطة، نقدم: <p>تقييم وتحليل المخاطر.<p>تحديد مصادر المخاطر وتحليلها لتصميم هياكل تأمينية فعّالة ومستدامة.<p>تصميم وتحسين برامج التأمين.<p>إعداد حلول تغطية مخصصة ومراجعة الوثائق الحالية وتحسين الشروط والحدود والتكلفة.<p>التفاوض ودعم الاكتتاب في السوق.<p>الاستفادة من علاقاتنا القوية مع شركات التأمين وإعادة التأمين للحصول على أفضل الشروط والتغطيات والأسعار.<p>الاستشارات في إدارة المطالبات.<p>تقديم دعم عملي خلال المطالبات، بما في ذلك الحالات المعقدة وذات القيمة العالية.<p>مراجعة الوثائق والاستشارة المستمرة.<p>تقييم مستمر لبرامج التأمين لضمان توافقها مع تطور المخاطر والمتطلبات التنظيمية.<p>آراء مستقلة.<p>تقديم مراجعات واستشارات مهنية حتى عند وضع التغطية خارج شبكتنا.<p>يستفيد عملاؤنا من نهج استشاري قائم على الشفافية والخبرة الفنية والشراكة طويلة الأمد."],
+     vision:[
+    "رؤيتنا",
+    "أن نكون جهة رائدة موثوقة في الاستشارات التأمينية، معترف بها لتقديم حلول استراتيجية شفافة تركز على العميل....",
+    "أن نكون جهة رائدة موثوقة في الاستشارات التأمينية، معترف بها لتقديم حلول استراتيجية شفافة تركز على العميل وتضع معايير جديدة للاحترافية والقيمة في قطاع التأمين.<p>نطمح إلى إعادة تعريف دور المستشار التأميني من خلال الانتقال من المعاملات إلى الشراكات طويلة الأمد، حيث يصبح التأمين أداة استباقية للحماية والمرونة والنمو المستدام."
+  ],
+
+      ceo:[
+    "السيرة الذاتية",
+    "<./strong>أيمن فتوني<strong>.<br><br> الرئيس التنفيذي.<p>أيمن فتوني هو الرئيس التنفيذي لشركة سيغما للاستشارات التأمينية، وهي شركة استشارية مستقلة متخصصة في الاستشارات التأمينية وتحليل المخاطر والحلول الاستراتيجية. يمتلك أكثر من 21 عاماً من الخبرة المهنية، وكان له دور فاعل في تطوير قطاع التأمين في لبنان وعلى المستويين الإقليمي والدولي....",
+    "<strong>أيمن فتوني</strong>.<br><br>الرئيس التنفيذي.<p>أيمن فتوني هو الرئيس التنفيذي لشركة سيغما للاستشارات التأمينية، وهي شركة استشارية مستقلة متخصصة في الاستشارات التأمينية وتحليل المخاطر والحلول الاستراتيجية. يمتلك أكثر من 21 عاماً من الخبرة المهنية وساهم في تطوير وتحديث قطاع التأمين في لبنان وخارجه.<p>طوال مسيرته المهنية، التزم بتعزيز الاستشارات التأمينية القائمة على الدقة والشفافية ونهج يضع العميل في صلب الاهتمام، مع التركيز على اتخاذ قرارات مدروسة وتقييم منظم للمخاطر.<p>وهو مؤلف بحث تأميني متخصص مسجّل رسمياً لدى مكتب الملكية الفكرية في وزارة الاقتصاد (رقم 6377)، كما أنه عضو في جمعية Million Dollar Round Table (MDRT).<p>يحمل عدة شهادات مهنية وقيادية، وتعاون مع شركات تأمين دولية، مما عزز قدرة سيغما على تقديم حلول استشارية تنافسية وموثوقة.<p>يقود أيمن فتوني سيغما بفلسفة واضحة تقوم على الاستقلالية والالتزام بأعلى المعايير المهنية وتقديم استراتيجيات تأمينية دقيقة ومستدامة."
+  ],
+
+    contact:["اتصل بنا","نظرة عامة عن الاتصال...","<strong>الهاتف:</strong> 01788669<br><strong>البريد الإلكتروني:</strong> management@sigma-leb.com<br><strong>العنوان:</strong> بيروت - رملة البيضا - Middel East Blg. - الطابق الخامس<br><strong>الموقع:</strong> <a href='https://maps.app.goo.gl/pTd21eFbWSFNJcnt7?g_st=ic' target='_blank'>عرض على Google Maps</a>"],
+
+
+    why:[
+    "لماذا سيغما",
+    "<strong>استشارات مستقلة تركز على العميل</strong><p>لسنا مرتبطين بأي شركة تأمين واحدة...",
+    `
+    <p><strong>استشارات مستقلة تركز على العميل</strong></p>
+    <p>لسنا مرتبطين بأي شركة تأمين، وتستند توصياتنا فقط إلى ملف المخاطر الخاص بك ومصلحتك.</p>
+
+    <p><strong>أكثر من مجرد وسيط</strong></p>
+    <p>نقدم تحليلاً للمخاطر وتصميم برامج تأمينية ودعماً استشارياً مستمراً.</p>
+
+    <p><strong>علاقات قوية مع الأسواق وإعادة التأمين</strong></p>
+    <p>تتيح لنا علاقاتنا التفاوض على أفضل الشروط والتغطيات.</p>
+
+    <p><strong>دعم احترافي في إدارة المطالبات</strong></p>
+    <p>نقف إلى جانب عملائنا في أصعب الظروف، بما في ذلك المطالبات المعقدة.</p>
+
+    <p><strong>شراكة طويلة الأمد</strong></p>
+    <p>نبني علاقات مستدامة ونطوّر الحلول التأمينية مع تطور المخاطر.</p>
+    `
+  ]
+
+  }
+};
+
+
+const boxes=["team","services","vision","ceo","contact","why"];
+
+function renderFooter(){
+  const footer=document.getElementById("footer");
+  footer.innerHTML="";
+  boxes.forEach(id=>{
+    const box=document.createElement("div");
+    box.className="box";
+    box.style.backgroundImage=`url(images/${id}.jpg)`;
+    box.innerHTML=`<span class="label">${translations[currentLang][id][0]}</span><span class="arrow">➜</span>`;
+    box.onclick=()=>showContent(id);
+    footer.appendChild(box);
+  });
+}
+
+function showContent(id){
+  const [title,shortText,fullText]=translations[currentLang][id];
+  document.getElementById("main-text").innerHTML=`
+    <div class="content-container">
+      <div class="content-text">
+        <h2>${title}</h2>
+        <div id="shortText" style="text-align:left;">${shortText}</div>
+        <div id="fullText" style="text-align:left;">${fullText}</div>
+        <button id="readMoreBtn">${currentLang==="ar"?"اقرأ المزيد":"Read More"}</button>
+      </div>
+      <div class="content-image">
+        <img src="images/${id}1.jpg" alt="${title}">
+      </div>
+    </div>
+  `;
+document.getElementById("shortText").style.display = "block";
+document.getElementById("fullText").style.display = "none";
+
+  const btn=document.getElementById("readMoreBtn");
+  btn.onclick=()=>{
+    const s=document.getElementById("shortText");
+    const f=document.getElementById("fullText");
+    if(f.style.display==="none"){
+      s.style.display="none";
+      f.style.display="block";
+      btn.textContent=currentLang==="ar"?"اقرأ أقل":"Read Less";
+    }else{
+      s.style.display="block";
+      f.style.display="none";
+      btn.textContent=currentLang==="ar"?"اقرأ المزيد":"Read More";
+    }
+  };
+}
+
+// Language dropdown
+document.getElementById("langBtn").onclick=()=>{
+  const menu=document.getElementById("langMenu");
+  menu.style.display = menu.style.display==="block"?"none":"block";
+};
+
+function setLang(lang){
+  currentLang=lang;
+  document.getElementById("langBtn").innerText=lang.toUpperCase()+" ▼";
+  document.getElementById("langMenu").style.display="none";
+  renderFooter();
+  showContent("home");
+}
+
+// Init
+renderFooter();
+showContent("home");
+</script>
+
+<!-- ===== Social Icons ===== -->
+<div class="social-icons">
+  <a href="https://wa.me/96103977867" target="_blank">
+    <img src="images/whatsapp.png" alt="WhatsApp">
+  </a>
+  <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
+    <img src="images/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/YOUR_PAGE" target="_blank">
+    <img src="images/facebook.png" alt="Facebook">
+  </a>
+  <a href="mailto:youremail@example.com" target="_blank">
+    <img src="images/email.png" alt="Email">
+  </a>
+</div>
+
+<style>
+.social-icons{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.social-icons a img{
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  transition: transform .25s ease;
+}
+
+.social-icons a img:hover{
+  transform: scale(1.15);
+}
+</style>
+</body>
+</html>

@@ -6,6 +6,24 @@
 <title>Sigma Insurance</title>
 
 <style>
+
+.social-icons-contact{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+.social-icons-contact img{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+  transition: transform .25s ease;
+}
+
+.social-icons-contact img:hover{
+  transform: scale(1.15);
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,sans-serif;background:#fff;color:#0D3B66;}
 
@@ -56,6 +74,39 @@ header img{height:100%; object-fit:contain; position:relative; z-index:3;}
   .footer{ grid-template-columns:repeat(2,1fr); }
   .content-container{ grid-template-columns: 1fr; } 
 }
+.contact-icons{
+  display:flex;
+  gap:15px;
+  margin-top:20px;
+}
+
+.contact-icons img{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+  transition:.25s;
+}
+
+.contact-icons img:hover{
+  transform:scale(1.15);
+}
+
+.map-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 14px;
+  background:#1E6091;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.map-btn:hover{
+  background:#0D3B66;
+}
+
+
 </style>
 </head>
 
@@ -97,7 +148,42 @@ const translations={
     ceo:["CEO Biography","<strong>Ayman Ftouni</strong>.<br><br> Chief Executive Officer.<p>Ayman Ftouni is the Chief Executive Officer of Sigma Insurance Consultants, an independent advisory firm specializing in insurance consultancy, risk analysis, and strategic insurance solutions. With more than 21 years of professional experience, he has played an active role in the development and modernization of the insurance sector in Lebanon and across regional and international markets....","<strong>Ayman Ftouni</strong>.<br><br>Chief Executive Officer.<p>Ayman Ftouni is the Chief Executive Officer of Sigma Insurance Consultants, an independent advisory firm specializing in insurance consultancy, risk analysis, and strategic insurance solutions. With more than 21 years of professional experience, he has played an active role in the development and modernization of the insurance sector in Lebanon and across regional and international markets. .<p>Throughout his career, Mr. Ftouni has been committed to advancing insurance consultancy as a discipline grounded in accuracy, transparency, and client-centric advisory practice. His approach emphasizes informed decision-making, structured risk evaluation, and the design of insurance solutions aligned with clients' long-term financial and operational objectives.<p>Mr. Ftouni is the author of a specialized insurance research officially registered with the Intellectual Property Office at the Ministry of Economy (Registration No. 6377), reflecting his analytical approach and contribution to professional knowledge within the industry. He is also a member of the Million Dollar Round Table (MDRT), an internationally recognized association representing excellence and professionalism in the global insurance and financial services sector.<p>In addition to his advisory work, he holds multiple professional and leadership certifications in insurance and has collaborated with several international insurance companies in Lebanon and abroad. This exposure has enabled him to build strong relationships across insurance and reinsurance markets, supporting Sigma's ability to deliver well-structured, competitive, and reliable consultancy solutions.<p>As CEO of Sigma Insurance Consultants, Ayman Ftouni leads the firm with a clear philosophy: to act independently, uphold the highest professional standards, and provide clients with clear, accurate, and sustainable insurance strategies. His leadership continues to shape Sigma's reputation as a trusted consultancy partner for corporate, institutional, and individual clients seeking clarity in complex insurance environments."],
   
 
-  contact:["Contact Us","Contact overview...","<strong>Phone:</strong> 01788669<br><strong>Email:</strong> management@sigma-leb.com<br><strong>Address:</strong> Beirut - Ramlet el Bayda - Middel East Blg. - 5th flr<br><strong>Location:</strong> <a href='https://maps.app.goo.gl/pTd21eFbWSFNJcnt7?g_st=ic' target='_blank'>View on Google Maps</a>"],
+contact:[
+  "Contact Us",
+  "Contact overview...",
+  `
+  <div class="contact-container">
+    <p><strong>Address:</strong><br>
+    Beirut - Ramlet el Bayda<br>
+    Middle East Bldg - 5th Floor
+    </p>
+
+    <p><strong>Phone:</strong> 01788669</p>
+    <p><strong>Email:</strong> <a href="mailto:management@sigma-leb.com">management@sigma-leb.com</a></p>
+
+    <a class="map-btn"
+       href="https://maps.app.goo.gl/pTd21eFbWSFNJcnt7"
+       target="_blank">
+      📍 Open in Google Maps
+    </a>
+
+    <div class="social-icons-contact">
+      <a href="https://wa.me/96103977867" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
+        <img src="instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/YOUR_PAGE" target="_blank">
+        <img src="facebook.png" alt="Facebook">
+      </a>
+      <a href="mailto:management@sigma-leb.com" target="_blank">
+        <img src="email.png" alt="Email">
+      </a>
+    </div>
+  </div>
+  `
+],
 
 why: [
   "Why Choose Sigma",
@@ -146,7 +232,43 @@ fr:{
     "<strong>Ayman Ftouni</strong>.<br><br>Directeur Général.<p>Ayman Ftouni est le Directeur Général de Sigma Insurance Consultants, un cabinet de conseil indépendant spécialisé en assurance, analyse des risques et solutions stratégiques en assurance. Fort de plus de 21 ans d’expérience professionnelle, il a contribué activement au développement et à la modernisation du secteur de l’assurance au Liban et à l’international.<p>Tout au long de sa carrière, M. Ftouni s’est engagé à promouvoir le conseil en assurance basé sur la précision, la transparence et une approche centrée sur le client. Sa philosophie repose sur une prise de décision éclairée, une évaluation structurée des risques et la conception de solutions alignées sur les objectifs financiers et opérationnels à long terme des clients.<p>M. Ftouni est l’auteur d’une recherche spécialisée en assurance officiellement enregistrée auprès du Bureau de la Propriété Intellectuelle du Ministère de l’Économie (N° 6377), témoignant de sa contribution analytique et professionnelle au secteur. Il est également membre du Million Dollar Round Table (MDRT).<p>Il détient plusieurs certifications professionnelles et de leadership et a collaboré avec de nombreuses compagnies d’assurance internationales, renforçant la capacité de Sigma à offrir des solutions compétitives et fiables.<p>En tant que CEO de Sigma Insurance Consultants, Ayman Ftouni dirige l’entreprise avec une philosophie claire : indépendance, excellence professionnelle et fourniture de stratégies d’assurance durables et transparentes."
   ],
 
-  contact:["Contactez-nous","Bref contact.","<strong>Téléphone:</strong> 01788669<br><strong>Email:</strong> management@sigma-leb.com<br><strong>Adresse:</strong> Beirut - Ramlet el Bayda - Middel East Blg. - 5e étage<br><strong>Localisation:</strong> <a href='https://maps.app.goo.gl/pTd21eFbWSFNJcnt7?g_st=ic' target='_blank'>Voir sur Google Maps</a>"],
+contact:[
+  "Contact Us",
+  "Contact overview...",
+  `
+  <div class="contact-container">
+    <p><strong>Address:</strong><br>
+    Beirut - Ramlet el Bayda<br>
+    Middle East Bldg - 5th Floor
+    </p>
+
+    <p><strong>Phone:</strong> 01788669</p>
+    <p><strong>Email:</strong> <a href="mailto:management@sigma-leb.com">management@sigma-leb.com</a></p>
+
+    <a class="map-btn"
+       href="https://maps.app.goo.gl/pTd21eFbWSFNJcnt7"
+       target="_blank">
+      📍 Open in Google Maps
+    </a>
+
+    <div class="social-icons-contact">
+      <a href="https://wa.me/96103977867" target="_blank">
+        <img src="images/whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/YOUR_PAGE" target="_blank">
+        <img src="images/facebook.png" alt="Facebook">
+      </a>
+      <a href="mailto:management@sigma-leb.com" target="_blank">
+        <img src="images/email.png" alt="Email">
+      </a>
+    </div>
+  </div>
+  `
+],
+
 
   why:[
     "Pourquoi choisir Sigma",
@@ -186,7 +308,42 @@ fr:{
     "<strong>أيمن فتوني</strong>.<br><br>الرئيس التنفيذي.<p>أيمن فتوني هو الرئيس التنفيذي لشركة سيغما للاستشارات التأمينية، وهي شركة استشارية مستقلة متخصصة في الاستشارات التأمينية وتحليل المخاطر والحلول الاستراتيجية. يمتلك أكثر من 21 عاماً من الخبرة المهنية وساهم في تطوير وتحديث قطاع التأمين في لبنان وخارجه.<p>طوال مسيرته المهنية، التزم بتعزيز الاستشارات التأمينية القائمة على الدقة والشفافية ونهج يضع العميل في صلب الاهتمام، مع التركيز على اتخاذ قرارات مدروسة وتقييم منظم للمخاطر.<p>وهو مؤلف بحث تأميني متخصص مسجّل رسمياً لدى مكتب الملكية الفكرية في وزارة الاقتصاد (رقم 6377)، كما أنه عضو في جمعية Million Dollar Round Table (MDRT).<p>يحمل عدة شهادات مهنية وقيادية، وتعاون مع شركات تأمين دولية، مما عزز قدرة سيغما على تقديم حلول استشارية تنافسية وموثوقة.<p>يقود أيمن فتوني سيغما بفلسفة واضحة تقوم على الاستقلالية والالتزام بأعلى المعايير المهنية وتقديم استراتيجيات تأمينية دقيقة ومستدامة."
   ],
 
-    contact:["اتصل بنا","نظرة عامة عن الاتصال...","<strong>الهاتف:</strong> 01788669<br><strong>البريد الإلكتروني:</strong> management@sigma-leb.com<br><strong>العنوان:</strong> بيروت - رملة البيضا - Middel East Blg. - الطابق الخامس<br><strong>الموقع:</strong> <a href='https://maps.app.goo.gl/pTd21eFbWSFNJcnt7?g_st=ic' target='_blank'>عرض على Google Maps</a>"],
+contact:[
+  "Contact Us",
+  "Contact overview...",
+  `
+  <div class="contact-container">
+    <p><strong>Address:</strong><br>
+    Beirut - Ramlet el Bayda<br>
+    Middle East Bldg - 5th Floor
+    </p>
+
+    <p><strong>Phone:</strong> 01788669</p>
+    <p><strong>Email:</strong> <a href="mailto:management@sigma-leb.com">management@sigma-leb.com</a></p>
+
+    <a class="map-btn"
+       href="https://maps.app.goo.gl/pTd21eFbWSFNJcnt7"
+       target="_blank">
+      📍 Open in Google Maps
+    </a>
+
+    <div class="social-icons-contact">
+      <a href="https://wa.me/96103977867" target="_blank">
+        <img src="images/whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/YOUR_PAGE" target="_blank">
+        <img src="images/facebook.png" alt="Facebook">
+      </a>
+      <a href="mailto:management@sigma-leb.com" target="_blank">
+        <img src="images/email.png" alt="Email">
+      </a>
+    </div>
+  </div>
+  `
+],
 
 
     why:[
@@ -230,12 +387,34 @@ function renderFooter(){
 }
 
 function showContent(id){
+
   window.scrollTo({
   top: 0,
   behavior: "smooth"
 });
-  const [title,shortText,fullText]=translations[currentLang][id];
-  document.getElementById("main-text").innerHTML=`
+
+  // ===== CONTACT PAGE =====
+if(id === "contact"){
+  const [title, shortText, fullText] = translations[currentLang][id];
+
+  document.getElementById("main-text").innerHTML = `
+    <div class="content-container">
+      <div class="content-text">
+        <h2>${title}</h2>
+        ${fullText}
+      </div>
+    <div class="content-image">
+          <img src="contact1.jpg">
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  // ===== باقي الصفحات =====
+  const [title, shortText, fullText] = translations[currentLang][id];
+
+  document.getElementById("main-text").innerHTML = `
     <div class="content-container">
       <div class="content-text">
         <h2>${title}</h2>
@@ -244,25 +423,27 @@ function showContent(id){
         <button id="readMoreBtn">${currentLang==="ar"?"اقرأ المزيد":"Read More"}</button>
       </div>
       <div class="content-image">
-        <img src="${id}1.jpg" alt="${title}">
+        <img src="${id}1.jpg">
       </div>
     </div>
   `;
-document.getElementById("shortText").style.display = "block";
-document.getElementById("fullText").style.display = "none";
 
-  const btn=document.getElementById("readMoreBtn");
-  btn.onclick=()=>{
+  document.getElementById("shortText").style.display="block";
+  document.getElementById("fullText").style.display="none";
+
+  document.getElementById("readMoreBtn").onclick = () => {
     const s=document.getElementById("shortText");
     const f=document.getElementById("fullText");
+    const b=document.getElementById("readMoreBtn");
+
     if(f.style.display==="none"){
       s.style.display="none";
       f.style.display="block";
-      btn.textContent=currentLang==="ar"?"اقرأ أقل":"Read Less";
+      b.innerText=currentLang==="ar"?"اقرأ أقل":"Read Less";
     }else{
       s.style.display="block";
       f.style.display="none";
-      btn.textContent=currentLang==="ar"?"اقرأ المزيد":"Read More";
+      b.innerText=currentLang==="ar"?"اقرأ أقل":"Read Less";
     }
   };
 }
@@ -286,47 +467,7 @@ renderFooter();
 showContent("home");
 </script>
 
-<!-- ===== Social Icons ===== -->
-<div class="social-icons">
-  <a href="https://wa.me/96103977867" target="_blank">
-    <img src="whatsapp.png" alt="WhatsApp">
-  </a>
-  <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
-    <img src="instagram.png" alt="Instagram">
-  </a>
-  <a href="https://www.facebook.com/YOUR_PAGE" target="_blank">
-    <img src="facebook.png" alt="Facebook">
-  </a>
-  <a href="mailto:management@sigma-leb.com" target="_blank">
-    <img src="email.png" alt="Email">
-  </a>
-</div>
 
-<style>
-.social-icons{
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 12px;
-  z-index: 9999;
-}
-
-.social-icons a img{
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  transition: transform .25s ease;
-}
-
-.social-icons a img:hover{
-  transform: scale(1.15);
-}
-</style>
 </body>
 </html>
-
-
-
-
 

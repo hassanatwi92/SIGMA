@@ -219,6 +219,10 @@ function renderFooter(){
 }
 
 function showContent(id){
+  window.scrollTo({
+  top: 0,
+  behavior: "smooth"
+});
   const [title,shortText,fullText]=translations[currentLang][id];
   document.getElementById("main-text").innerHTML=`
     <div class="content-container">
@@ -310,3 +314,4 @@ showContent("home");
 </style>
 </body>
 </html>
+

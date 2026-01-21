@@ -43,6 +43,8 @@ header img{height:100%; object-fit:contain; position:relative; z-index:3;}
 .lang-menu button{width:100%; background:none; color:#fff; border:none; padding:6px 10px; cursor:pointer;}
 .lang-menu button:hover{background:#1E6091}
 
+
+
 /* Main Content */
 .main-content{min-height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; background:#ccc;}
 .content-container{display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start;}
@@ -80,6 +82,16 @@ header img{height:100%; object-fit:contain; position:relative; z-index:3;}
   margin-top:20px;
 }
 
+/* Logo size on mobile */
+@media (max-width: 767px){
+  header img{
+    height:70%;
+    max-height:90px;
+  }
+}
+
+
+
 .contact-icons img{
   width:36px;
   height:36px;
@@ -107,6 +119,25 @@ header img{height:100%; object-fit:contain; position:relative; z-index:3;}
 }
 
 
+.home-float{
+  position:fixed;
+  top:10px;
+  left:10px;
+  z-index:9999;
+}
+
+.home-float img{
+  width:40px;
+  height:40px;
+  cursor:pointer;
+  transition:transform .25s ease;
+}
+
+.home-float img:hover{
+  transform:scale(1.15);
+}
+
+
 </style>
 </head>
 
@@ -119,7 +150,7 @@ header img{height:100%; object-fit:contain; position:relative; z-index:3;}
   <div class="header-overlay"></div>
   <img src="logo.png" alt="Sigma Insurance">
   <div class="lang-dropdown">
-    <button id="langBtn">ENG ▼</button>
+    <button id="langBtn">🌐ENG ▼</button>
     <div id="langMenu" class="lang-menu">
       <button onclick="setLang('en')">ENG</button>
       <button onclick="setLang('fr')">FR</button>
@@ -127,6 +158,12 @@ header img{height:100%; object-fit:contain; position:relative; z-index:3;}
     </div>
   </div>
 </header>
+
+
+<a href="#" class="home-float" onclick="showContent('home')">
+  <img src="home.png" alt="Home">
+</a>
+
 
 <div class="main-content">
   <div id="main-text"></div>

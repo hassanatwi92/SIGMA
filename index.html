@@ -250,6 +250,7 @@ why: [
 
 
 fr:{
+home:["<h1>SIGMA</h1>","<h1>Conseils professionnels. Protection efficace.</h1>","<h1>Conseils professionnels. Protection efficace.</h1>"],
   team:[
     "Notre Équipe",
     "Chez Sigma Insurance Consultants, notre force réside dans l’expertise, l’intégrité et l’engagement de nos équipes....",
@@ -336,6 +337,7 @@ contact:[
 
 
   ar:{
+    home:["<h1>سيغما</h1>","<h1>نصائح احترافية، حماية فعّالة.</h1>","<h1>نصائح احترافية، حماية فعّالة.</h1>"],
     team:["فريقنا","في سيغما للاستشارات التأمينية، تكمن قوتنا في خبرة فريقنا ونزاهته والتزامه...","في سيغما للاستشارات التأمينية، تكمن قوتنا في خبرة فريقنا ونزاهته والتزامه.<p>يتكوّن فريقنا من محترفين مؤهلين في مجال التأمين، يتمتعون بخلفيات متنوعة في الاستشارات التأمينية والاكتتاب وإدارة المخاطر وتسوية المطالبات. يساهم كل عضو بخبرة عملية في السوق ونهج يضع العميل في المقام الأول، مما يضمن حلولاً متينة تقنياً وفعّالة تجارياً.<p>نعمل كفريق استشاري موحّد بالتعاون الوثيق مع العملاء وشركات التأمين وإعادة التأمين، لتقديم إرشادات واضحة ودعم سريع واستراتيجيات تأمينية مستدامة. ويُعد التطوير المهني المستمر والالتزام بأفضل الممارسات الدولية جزءاً أساسياً من ثقافتنا.<p>ما يميز فريقنا حقاً هو التزامنا ببناء علاقات طويلة الأمد. نحرص على فهم احتياجات كل عميل ومرافقته طوال دورة حياة الوثيقة التأمينية، من التقييم الأولي حتى تسوية المطالبات.<p>في سيغما، يدعمك فريق يتعامل مع مخاطرِك كما لو كانت مخاطرَه الخاصة."],
     services:["الخدمات","بالإضافة إلى خدمات الوساطة، نقدم: <p>تقييم وتحليل المخاطر.<p>تحديد مصادر المخاطر وتحليلها لتصميم هياكل تأمينية فعّالة ومستدامة......","بالإضافة إلى خدمات الوساطة، نقدم: <p>تقييم وتحليل المخاطر.<p>تحديد مصادر المخاطر وتحليلها لتصميم هياكل تأمينية فعّالة ومستدامة.<p>تصميم وتحسين برامج التأمين.<p>إعداد حلول تغطية مخصصة ومراجعة الوثائق الحالية وتحسين الشروط والحدود والتكلفة.<p>التفاوض ودعم الاكتتاب في السوق.<p>الاستفادة من علاقاتنا القوية مع شركات التأمين وإعادة التأمين للحصول على أفضل الشروط والتغطيات والأسعار.<p>الاستشارات في إدارة المطالبات.<p>تقديم دعم عملي خلال المطالبات، بما في ذلك الحالات المعقدة وذات القيمة العالية.<p>مراجعة الوثائق والاستشارة المستمرة.<p>تقييم مستمر لبرامج التأمين لضمان توافقها مع تطور المخاطر والمتطلبات التنظيمية.<p>آراء مستقلة.<p>تقديم مراجعات واستشارات مهنية حتى عند وضع التغطية خارج شبكتنا.<p>يستفيد عملاؤنا من نهج استشاري قائم على الشفافية والخبرة الفنية والشراكة طويلة الأمد."],
      vision:[
@@ -371,16 +373,16 @@ contact:[
 
     <div class="social-icons-contact">
       <a href="https://wa.me/96103977867" target="_blank">
-        <img src="images/whatsapp.png" alt="WhatsApp">
+        <img src="whatsapp.png" alt="WhatsApp">
       </a>
       <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
-        <img src="images/instagram.png" alt="Instagram">
+        <img src="instagram.png" alt="Instagram">
       </a>
       <a href="https://www.facebook.com/YOUR_PAGE" target="_blank">
-        <img src="images/facebook.png" alt="Facebook">
+        <img src="facebook.png" alt="Facebook">
       </a>
       <a href="mailto:management@sigma-leb.com" target="_blank">
-        <img src="images/email.png" alt="Email">
+        <img src="email.png" alt="Email">
       </a>
     </div>
   </div>
@@ -452,6 +454,22 @@ if(id === "contact"){
     `;
     return;
   }
+
+if(id === "home"){
+  const [title, shortText, fullText] = translations[currentLang][id];
+  document.getElementById("main-text").innerHTML = `
+    <div class="content-container">
+      <div class="content-text">
+        <h1>${title}</h1>
+        <p>${shortText}</p>
+      </div>
+      <div class="content-image">
+        <img src="home1.jpg">
+      </div>
+    </div>
+  `;
+  return;
+}
 
   // ===== باقي الصفحات =====
   const [title, shortText, fullText] = translations[currentLang][id];

@@ -149,8 +149,8 @@ header img{
 
 @media (max-width: 767px){
   .lang-dropdown button{
-    font-size:12px;      /* تصغير النص والأيقونة 🌐 */
-    padding:4px 8px;     /* تصغير الزر */
+    font-size:10px;      /* تصغير النص والأيقونة 🌐 */
+    padding:3px 6px;     /* تصغير الزر */
   }
 }
 
@@ -196,11 +196,12 @@ header img{
 }
 
 
-.home-float{
-  position:absolute;
-  top:10px;
-  left:10px;
-  z-index:9999;
+.home-float {
+  position: fixed; /* ثابت بالنسبة للشاشة */
+  top: 10px;
+  left: 10px; /* مكانها الثابت */
+  z-index: 9999;
+  direction: ltr; /* تمنع أي تأثير RTL داخلي */
 }
 
 .home-float img{

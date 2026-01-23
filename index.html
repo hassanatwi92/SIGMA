@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,39 @@
 
 <style>
 
+
+/* RTL Arabic */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* عناوين */
+body.rtl h1,
+body.rtl h2,
+body.rtl h3 {
+  text-align: right;
+}
+
+/* فقرات وقوائم */
+body.rtl p,
+body.rtl li {
+  text-align: right;
+}
+
+/* المحتوى الرئيسي */
+body.rtl .content-text {
+  text-align: right;
+}
+
+/* Contact */
+body.rtl .contact-container {
+  text-align: right;
+}
+
+body.rtl .content-container {
+  flex-direction: row-reverse;
+}
 
 
 .social-icons-contact{
@@ -570,6 +603,10 @@ document.getElementById("langBtn").onclick=()=>{
 
 function setLang(lang){
   currentLang=lang;
+document.body.classList.remove("rtl");
+if(lang === "ar"){
+  document.body.classList.add("rtl");
+}
   document.getElementById("langBtn").innerText=lang.toUpperCase()+" ▼";
   document.getElementById("langMenu").style.display="none";
   renderFooter();

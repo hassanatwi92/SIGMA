@@ -604,21 +604,35 @@ if(id === "home"){
   document.getElementById("shortText").style.display="block";
   document.getElementById("fullText").style.display="none";
 
-  document.getElementById("readMoreBtn").onclick = () => {
-    const s=document.getElementById("shortText");
-    const f=document.getElementById("fullText");
-    const b=document.getElementById("readMoreBtn");
+ document.getElementById("readMoreBtn").onclick = () => {
+  const s = document.getElementById("shortText");
+  const f = document.getElementById("fullText");
+  const b = document.getElementById("readMoreBtn");
 
-    if(f.style.display==="none"){
-      s.style.display="none";
-      f.style.display="block";
-      b.innerText=currentLang==="ar"?"اقرأ أقل":"Read Less";
-    }else{
-      s.style.display="block";
-      f.style.display="none";
-      b.innerText=currentLang==="ar"?"اقرأ أقل":"Read Less";
-    }
-  };
+  if(f.style.display === "none"){
+    // أولاً نعرض النص الكامل
+    s.style.display = "none";
+    f.style.display = "block";
+    
+    // بعد ثواني قصيرة، اعمل scroll للعنصر من فوق
+    setTimeout(() => {
+      f.scrollIntoView({behavior: "smooth", block: "start"});
+    }, 50);
+
+    b.innerText = currentLang === "ar" ? "اقرأ أقل" : "Read Less";
+  } else {
+    // إذا ضغطنا اقرأ أقل
+    s.style.display = "block";
+    f.style.display = "none";
+
+    // scroll لل shortText من فوق
+    setTimeout(() => {
+      s.scrollIntoView({behavior: "smooth", block: "start"});
+    }, 50);
+
+    b.innerText = currentLang === "ar" ? "اقرأ المزيد" : "Read More";
+  }
+};
 }
 
 // Language dropdown

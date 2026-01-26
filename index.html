@@ -282,7 +282,7 @@ let currentLang="en";
 const translations={
   en:{
 
-     home:["<h1>SIGMA</h1>","<h1>Professional Advice.<p>Powerful Protection.</h1>","<h1>Professional Advice.<p>Powerful Protection.</h1>"],
+     home:["<h2>Professional Advice. Powerful Protection.</h2>","<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. ","<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. <p>Backed by a team of advisors with over <strong>21 years of proven market experience</strong>, we act solely in our clients’ best interests, delivering transparent and reliable coverage designed to protect assets, businesses, and individuals in an ever-changing risk environment.</p>"],
     team:["Our Team","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people....","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people.<br><p>Our team is composed of qualified insurance professionals with diverse backgrounds in insurance consultancy, underwriting, risk management, and claims handling.<br><br>Each member brings practical market knowledge and a client-focused mindset, ensuring that every solution we deliver is both technically sound and commercially effective.<br><p>We operate as one unified advisory team—working closely with clients, insurers, and reinsurers to provide clear guidance, timely support, and sustainable insurance strategies.<br><br>Continuous professional development and adherence to international best practices are core to our culture, allowing us to remain aligned with evolving market standards.<br><p>What truly distinguishes our team is our commitment to long-term relationships.<br><br>We take the time to understand each client’s unique needs and stand by them throughout the policy lifecycle—from initial assessment to claims resolution.<p>At <strong>Sigma</strong>, you are supported by a team that treats your risks as its own."],
     services:["Services","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li>Insurance Program Design & Optimization...</li></ul>","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li><p>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li><p>Insurance Program Design & Optimization.</li><li><p>Structuring customized coverage solutions, reviewing existing policies, and enhancing limits, conditions, and cost efficiency.</li><li><p>Market Negotiation & Placement Support.</li><li><p>Leveraging our strong relationships with insurers and reinsurers to secure optimal terms, coverage breadth, and pricing.</li><li><p>Claims Advisory & Critical Claims Support.</li><li><p>Providing hands-on assistance during claims, including complex and high-value cases, to protect our clients’ interests and accelerate resolutions.</li><li><p>Policy Review & Ongoing Advisory.</li><li><p>Continuous evaluation of insurance programs to ensure alignment with evolving risks, operations, and regulatory requirements.<p>Independent Second Opinions.</li><li><p>Offering professional reviews and advice even when coverage is placed outside our network.</li><li><p>Our clients benefit from an advisory-driven approach built on transparency, technical expertise, and long-term partnership—ensuring insurance is a proactive risk management tool, not merely a transactional product.</li></ul>"],
     vision:["Our Vision","<br>To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry....","<br>To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry.<p><br>We aspire to redefine the role of the insurance advisor by moving beyond transactions toward long-term partnerships—where insurance becomes a proactive tool for protection, resilience, and sustainable growth."],
@@ -358,9 +358,9 @@ why: [
 fr:{
 
 home:[
-  "<h1>SIGMA</h1>",
-  "<h1>Conseil Professionnel.<p>Protection Puissante.</h1>",
-  "<h1>Conseil Professionnel.<p>Protection Puissante.</h1>"
+  "<h2>Conseil Professionnel. Protection Puissante.</h2>",
+  "<br><strong>Sigma</strong> est un cabinet de courtage en assurances indépendant offrant des solutions d’assurance sur mesure, l’évaluation des risques et des services de conseil stratégique.",
+  "<br><strong>Sigma</strong> est un cabinet de courtage en assurances indépendant offrant des solutions d’assurance sur mesure, l’évaluation des risques et des services de conseil stratégique.<p>Soutenus par une équipe de conseillers disposant de plus de <strong>21 années d’expérience éprouvée sur le marché</strong>, nous agissons exclusivement dans l’intérêt de nos clients, en proposant des couvertures transparentes et fiables, conçues pour protéger les actifs, les entreprises et les particuliers dans un environnement de risques en constante évolution.</p>"
 ],
 
 team:[
@@ -444,9 +444,9 @@ why:[
 ar:{
 
 home:[
-  "<h1>SIGMA</h1>",
-  "<h1>استشارات احترافية.<p>حماية قوية.</h1>",
-  "<h1>استشارات احترافية.<p>حماية قوية.</h1>"
+  "<h2>استشارات احترافية. حماية قوية.</h2>",
+  "<br><p><strong>Sigma</strong> هي شركة وساطة تأمينية مستقلة تقدّم حلول تأمينية مخصّصة، وتقييمًا للمخاطر، وخدمات استشارية استراتيجية.</p>",
+  "<br><p><strong>Sigma</strong> هي شركة وساطة تأمينية مستقلة تقدّم حلول تأمينية مخصّصة، وتقييمًا للمخاطر، وخدمات استشارية استراتيجية.</p><p>وبالاستناد إلى فريق من المستشارين يتمتّعون بأكثر من <strong>21 عامًا من الخبرة المثبتة في السوق</strong>، نعمل حصريًا بما يخدم مصلحة عملائنا، ونوفّر تغطيات شفافة وموثوقة صُمّمت لحماية الأصول والأعمال والأفراد في بيئة مخاطر دائمة التغيّر.</p>"
 ],
 
 team:[
@@ -568,21 +568,7 @@ if(id === "contact"){
     return;
   }
 
-if(id === "home"){
-  const [title, shortText, fullText] = translations[currentLang][id];
-  document.getElementById("main-text").innerHTML = `
-    <div class="content-container">
-      <div class="content-text">
-        <h1>${title}</h1>
-        <p>${shortText}</p>
-      </div>
-      <div class="content-image">
-        <img src="home1.jpg">
-      </div>
-    </div>
-  `;
-  return;
-}
+
 
   // ===== باقي الصفحات =====
   const [title, shortText, fullText] = translations[currentLang][id];

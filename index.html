@@ -543,7 +543,7 @@ function renderFooter(){
   boxes.forEach(id=>{
     const box=document.createElement("div");
     box.className="box";
-    box.style.backgroundImage=`url(SIGMA/${id}.jpg)`;
+    box.style.backgroundImage=`url(${id}.jpg)`;
     box.innerHTML=`<span class="label">${translations[currentLang][id][0]}</span><span class="arrow">➜</span>`;
     box.onclick=()=>showContent(id);
     footer.appendChild(box);
@@ -657,5 +657,6 @@ showContent("home");
 
 </body>
 </html>
+
 
 

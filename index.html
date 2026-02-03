@@ -251,31 +251,32 @@ header img{
 
 
 .hero-title{
-  font-size:28px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:28px;      /* العنوان الكبير */
   font-weight:700;
   color:#0D3B66;
   line-height:1.2;
-  position:relative;
+  white-space:nowrap;
 }
 
 /* النص الصغير */
 .hero-side{
-  display:inline-flex;
+  display:flex;
   align-items:center;
-  font-size:12px;
+  font-size:12px;      /* 👈 أهم سطر */
   font-weight:600;
   color:#0D3B66;
-  margin-left:10px;
   opacity:.85;
-  white-space:nowrap;
 }
 
 /* الخط الصغير */
 .hero-dash{
-  width:26px;
+  min-width:20px;
   height:2px;
   background:#0D3B66;
-  margin-right:6px;
+  flex-shrink:0;
 }
 
 /* RTL */
@@ -299,7 +300,13 @@ body.rtl .hero-dash{
     margin-top:6px;
     font-size:11px;
   }
+@media(max-width:767px){
+  .hero-dash{
+    min-width:16px;
+    height:2px;
+  }
 }
+
 
 
 
@@ -347,7 +354,7 @@ const translations={
 
      home:[`
 <h2 class="hero-title">
-  Professional Advice.<br>Powerful Protection.
+ Professional Advice.<br>Powerful Protection.
   <span class="hero-side">
     <span class="hero-dash"></span>
     SIGMA insurance.

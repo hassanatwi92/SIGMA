@@ -252,72 +252,84 @@ header img{
 
 .hero-title{
   display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:28px;      /* العنوان الكبير */
+  flex-direction:column;   /* 👈 كل جملة بسطر */
+  gap:6px;
+  font-size:28px;
   font-weight:700;
-  color:#0D3B66;
   line-height:1.2;
-  white-space:nowrap;
-}
-
-/* النص الصغير */
-.hero-side{
-  display:flex;
-  align-items:center;
-  font-size:12px;      /* 👈 أهم سطر */
-  font-weight:600;
   color:#0D3B66;
-  opacity:.85;
 }
 
-/* الخط الصغير */
-.hero-dash{
-  min-width:20px;
-  height:2px;
-  background:#0D3B66;
-  flex-shrink:0;
+.title-main{
+  white-space:nowrap;      /* 👈 يمنع Professional / Advice يفترقوا */
+}
+.hero-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; /* صار كل شي على الشمال */
+  gap: 40px; 
+  flex-wrap: wrap;
 }
 
-/* RTL */
-body.rtl .hero-side{
-  margin-left:0;
-  margin-right:10px;
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0D3B66;
+  text-align: left; /* العنوان على الشمال */
 }
 
-body.rtl .hero-dash{
-  margin-right:0;
-  margin-left:6px;
+.hero-side-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D3B66;
+  position: relative;
+  top: 13px;          /* خليه زي ما عملنا للارتفاع */
+  left: -35px;         /* هذي تنقل كل الـ dash + text شوي عاليسار */
 }
 
-/* موبايل */
-/* ===== Mobile ===== */
-@media (max-width: 767px){
+.hero-dash {
+  width: 40px;
+  height: 3px; 
+  background: #0D3B66;
+  margin-bottom: 5px;
+}
 
-  .hero-title{
-    font-size:24px;
-    white-space:normal; /* خلي السطر يرتاح */
+.hero-side-text div {
+  display: block; 
+  line-height: 1.2;
+}
+
+.hero-side-text div:nth-child(2) {
+  color: #6B7280;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 18px;
+    gap: 4px;
   }
 
-  .hero-side{
-    display:flex;       /* ❗ ما تخليها block */
-    align-items:center;
-    gap:6px;
-    margin-top:6px;
-    font-size:11px;
+  .hero-side-vertical {
+    font-size: 9px;
+    gap: 2px;
   }
 
-  .hero-dash{
-    min-width:16px;
-    height:2px;
-    background:#0D3B66;
-    flex-shrink:0;
+  .hero-dash {
+    width: 30px;
+  position: relative;
+  top: 2px; 
+  left: -6px;
   }
 }
-
-
-
-
 
 </style>
 </head>
@@ -360,13 +372,20 @@ const translations={
   en:{
 
      home:[`
-<h2 class="hero-title">
- Professional Advice.<br>Powerful Protection.
-  <span class="hero-side">
-    <span class="hero-dash"></span>
-    SIGMA.
-  </span>
-</h2>
+<div class="hero-container">
+  <div class="hero-title">
+    <span class="title-main">Professional Advice.</span>
+    <span class="title-main">Powerful Protection.</span>
+  </div>
+
+  <div class="hero-side-vertical">
+    <div class="hero-dash"></div>
+    <div class="hero-side-text">
+      <div>Strategic</div>
+      <div>Planning</div>
+    </div>
+  </div>
+</div>
 `,"<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. ","<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. <p>Backed by a team of advisors with over <strong>21 years of proven market experience</strong>, we act solely in our clients’ best interests, delivering transparent and reliable coverage designed to protect assets, businesses, and individuals in an ever-changing risk environment.</p>"],
     team:["Our Team","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people....","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people.<br><p>Our team is composed of qualified insurance professionals with diverse backgrounds in insurance consultancy, underwriting, risk management, and claims handling.<br><br>Each member brings practical market knowledge and a client-focused mindset, ensuring that every solution we deliver is both technically sound and commercially effective.<br><p>We operate as one unified advisory team—working closely with clients, insurers, and reinsurers to provide clear guidance, timely support, and sustainable insurance strategies.<br><br>Continuous professional development and adherence to international best practices are core to our culture, allowing us to remain aligned with evolving market standards.<br><p>What truly distinguishes our team is our commitment to long-term relationships.<br><br>We take the time to understand each client’s unique needs and stand by them throughout the policy lifecycle—from initial assessment to claims resolution.<p>At <strong>Sigma</strong>, you are supported by a team that treats your risks as its own."],
     services:["Services","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li>Insurance Program Design & Optimization...</li></ul>","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li><p>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li><p>Insurance Program Design & Optimization.</li><li><p>Structuring customized coverage solutions, reviewing existing policies, and enhancing limits, conditions, and cost efficiency.</li><li><p>Market Negotiation & Placement Support.</li><li><p>Leveraging our strong relationships with insurers and reinsurers to secure optimal terms, coverage breadth, and pricing.</li><li><p>Claims Advisory & Critical Claims Support.</li><li><p>Providing hands-on assistance during claims, including complex and high-value cases, to protect our clients’ interests and accelerate resolutions.</li><li><p>Policy Review & Ongoing Advisory.</li><li><p>Continuous evaluation of insurance programs to ensure alignment with evolving risks, operations, and regulatory requirements.<p>Independent Second Opinions.</li><li><p>Offering professional reviews and advice even when coverage is placed outside our network.</li><li><p>Our clients benefit from an advisory-driven approach built on transparency, technical expertise, and long-term partnership—ensuring insurance is a proactive risk management tool, not merely a transactional product.</li></ul>"],
@@ -443,7 +462,20 @@ why: [
 fr:{
 
 home:[
-  "<h2>Conseil Professionnel. Protection Puissante.</h2>",
+  `<div class="hero-container">
+  <div class="hero-title">
+    <span class="title-main">Conseil Professionnel.</span>
+    <span class="title-main">Protection Puissante.</span>
+  </div>
+
+  <div class="hero-side-vertical">
+    <div class="hero-dash"></div>
+    <div class="hero-side-text">
+      <div>Stratégique</div>
+      <div>Planification</div>
+    </div>
+  </div>
+</div>`,
   "<br><strong>Sigma</strong> est un cabinet de courtage en assurances indépendant offrant des solutions d’assurance sur mesure, l’évaluation des risques et des services de conseil stratégique.",
   "<br><strong>Sigma</strong> est un cabinet de courtage en assurances indépendant offrant des solutions d’assurance sur mesure, l’évaluation des risques et des services de conseil stratégique.<p>Soutenus par une équipe de conseillers disposant de plus de <strong>21 années d’expérience éprouvée sur le marché</strong>, nous agissons exclusivement dans l’intérêt de nos clients, en proposant des couvertures transparentes et fiables, conçues pour protéger les actifs, les entreprises et les particuliers dans un environnement de risques en constante évolution.</p>"
 ],
@@ -529,7 +561,20 @@ why:[
 ar:{
 
 home:[
-  "<h2>استشارات احترافية. حماية قوية.</h2>",
+  `<div class="hero-container">
+  <div class="hero-title">
+    <span class="title-main">استشارات مهنية.</span>
+    <span class="title-main">حماية قوية.</span>
+  </div>
+
+  <div class="hero-side-vertical">
+    <div class="hero-dash"></div>
+    <div class="hero-side-text">
+      <div>استراتيجي</div>
+      <div>تخطيط</div>
+    </div>
+  </div>
+</div>`,
   "<br><p><strong>Sigma</strong> هي شركة وساطة تأمينية مستقلة تقدّم حلول تأمينية مخصّصة، وتقييمًا للمخاطر، وخدمات استشارية استراتيجية.</p>",
   "<br><p><strong>Sigma</strong> هي شركة وساطة تأمينية مستقلة تقدّم حلول تأمينية مخصّصة، وتقييمًا للمخاطر، وخدمات استشارية استراتيجية.</p><p>وبالاستناد إلى فريق من المستشارين يتمتّعون بأكثر من <strong>21 عامًا من الخبرة المثبتة في السوق</strong>، نعمل حصريًا بما يخدم مصلحة عملائنا، ونوفّر تغطيات شفافة وموثوقة صُمّمت لحماية الأصول والأعمال والأفراد في بيئة مخاطر دائمة التغيّر.</p>"
 ],

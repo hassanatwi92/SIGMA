@@ -249,6 +249,62 @@ header img{
 }
 
 
+
+.hero-title{
+  font-size:28px;
+  font-weight:700;
+  color:#0D3B66;
+  line-height:1.2;
+  position:relative;
+}
+
+/* النص الصغير */
+.hero-side{
+  display:inline-flex;
+  align-items:center;
+  font-size:12px;
+  font-weight:600;
+  color:#0D3B66;
+  margin-left:10px;
+  opacity:.85;
+  white-space:nowrap;
+}
+
+/* الخط الصغير */
+.hero-dash{
+  width:26px;
+  height:2px;
+  background:#0D3B66;
+  margin-right:6px;
+}
+
+/* RTL */
+body.rtl .hero-side{
+  margin-left:0;
+  margin-right:10px;
+}
+
+body.rtl .hero-dash{
+  margin-right:0;
+  margin-left:6px;
+}
+
+/* موبايل */
+@media(max-width:767px){
+  .hero-title{
+    font-size:24px;
+  }
+  .hero-side{
+    display:block;
+    margin-top:6px;
+    font-size:11px;
+  }
+}
+
+
+
+
+
 </style>
 </head>
 
@@ -289,7 +345,15 @@ let currentLang="en";
 const translations={
   en:{
 
-     home:["<h2>Professional Advice. Powerful Protection.</h2>","<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. ","<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. <p>Backed by a team of advisors with over <strong>21 years of proven market experience</strong>, we act solely in our clients’ best interests, delivering transparent and reliable coverage designed to protect assets, businesses, and individuals in an ever-changing risk environment.</p>"],
+     home:[`
+<h2 class="hero-title">
+  Professional Advice.<br>Powerful Protection.
+  <span class="hero-side">
+    <span class="hero-dash"></span>
+    SIGMA insurance.
+  </span>
+</h2>
+`,"<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. ","<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. <p>Backed by a team of advisors with over <strong>21 years of proven market experience</strong>, we act solely in our clients’ best interests, delivering transparent and reliable coverage designed to protect assets, businesses, and individuals in an ever-changing risk environment.</p>"],
     team:["Our Team","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people....","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people.<br><p>Our team is composed of qualified insurance professionals with diverse backgrounds in insurance consultancy, underwriting, risk management, and claims handling.<br><br>Each member brings practical market knowledge and a client-focused mindset, ensuring that every solution we deliver is both technically sound and commercially effective.<br><p>We operate as one unified advisory team—working closely with clients, insurers, and reinsurers to provide clear guidance, timely support, and sustainable insurance strategies.<br><br>Continuous professional development and adherence to international best practices are core to our culture, allowing us to remain aligned with evolving market standards.<br><p>What truly distinguishes our team is our commitment to long-term relationships.<br><br>We take the time to understand each client’s unique needs and stand by them throughout the policy lifecycle—from initial assessment to claims resolution.<p>At <strong>Sigma</strong>, you are supported by a team that treats your risks as its own."],
     services:["Services","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li>Insurance Program Design & Optimization...</li></ul>","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li><p>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li><p>Insurance Program Design & Optimization.</li><li><p>Structuring customized coverage solutions, reviewing existing policies, and enhancing limits, conditions, and cost efficiency.</li><li><p>Market Negotiation & Placement Support.</li><li><p>Leveraging our strong relationships with insurers and reinsurers to secure optimal terms, coverage breadth, and pricing.</li><li><p>Claims Advisory & Critical Claims Support.</li><li><p>Providing hands-on assistance during claims, including complex and high-value cases, to protect our clients’ interests and accelerate resolutions.</li><li><p>Policy Review & Ongoing Advisory.</li><li><p>Continuous evaluation of insurance programs to ensure alignment with evolving risks, operations, and regulatory requirements.<p>Independent Second Opinions.</li><li><p>Offering professional reviews and advice even when coverage is placed outside our network.</li><li><p>Our clients benefit from an advisory-driven approach built on transparency, technical expertise, and long-term partnership—ensuring insurance is a proactive risk management tool, not merely a transactional product.</li></ul>"],
     vision:["Our Vision","<br>To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry....","<br>To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry.<p><br>We aspire to redefine the role of the insurance advisor by moving beyond transactions toward long-term partnerships—where insurance becomes a proactive tool for protection, resilience, and sustainable growth."],
@@ -657,7 +721,6 @@ showContent("home");
 
 </body>
 </html>
-
 
 
 

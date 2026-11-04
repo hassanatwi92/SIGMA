@@ -2,784 +2,267 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sigma Insurance</title>
-
-<meta name="description" content="Sigma Insurance Consultants – Professional insurance advisory, risk management, and insurance consultancy services in Lebanon.">
-<meta name="keywords" content="Sigma Insurance, Insurance Consultants Lebanon, Insurance Advisory, Risk Management, Insurance Consultancy">
-<meta name="author" content="Sigma Insurance Consultants">
-
-<!-- Open Graph -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sigma Insurance Consultants | Insurance Advisory Lebanon</title>
+<meta name="description" content="Sigma Insurance Consultants – Professional insurance advisory, risk management, and consultancy services in Lebanon.">
+<meta name="google-site-verification" content="O8RfrwT4FsOVbrdlweS1xEIGkGn7fGsvwr80_xduW_w">
 <meta property="og:title" content="Sigma Insurance Consultants">
 <meta property="og:description" content="Professional insurance advisory and risk management services in Lebanon.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="logo.png">
-<meta property="og:url" content="http://www.sigma-leb.com">
-
-<link rel="preload" href="home.png" as="image">
-<link rel="preload" href="logo.png" as="image">
-<link rel="preload" href="whatsapp.png" as="image">
-<link rel="preload" href="instagram.png" as="image">
-<link rel="preload" href="linkedin.png" as="image">
-<link rel="preload" href="email.png" as="image">
-
-
+<meta property="og:image" content="https://www.sigma-leb.com/logo.png">
+<meta property="og:url" content="https://www.sigma-leb.com/">
+<link rel="canonical" href="https://www.sigma-leb.com/">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Sigma Insurance Consultants","url":"https://www.sigma-leb.com/","logo":"https://www.sigma-leb.com/logo.png","sameAs":["https://www.instagram.com/sigma_insurance_","https://lb.linkedin.com/in/ftouni-ayman-852865b9"]}</script>
 <style>
-
-
-/* RTL Arabic */
-body.rtl {
-  direction: rtl;
-  text-align: right;
-}
-
-/* عناوين */
-body.rtl h1,
-body.rtl h2,
-body.rtl h3 {
-  text-align: right;
-}
-
-/* فقرات وقوائم */
-body.rtl p,
-body.rtl li {
-  text-align: right;
-}
-
-/* المحتوى الرئيسي */
-body.rtl .content-text {
-  text-align: right;
-}
-
-/* Contact */
-body.rtl .contact-container {
-  text-align: right;
-}
-
-body.rtl .content-container {
-  flex-direction: row-reverse;
-}
-
-
-.social-icons-contact{
-  display:flex;
-  gap:12px;
-  margin-top:12px;
-}
-
-.social-icons-contact img{
-  width:38px;
-  height:38px;
-  object-fit:contain;
-  transition: transform .25s ease;
-}
-
-.social-icons-contact img:hover{
-  transform: scale(1.15);
-}
-
+:root{--navy:#0A2342;--deep:#06172D;--blue:#1E6091;--brass:#C2A26B;--paper:#F6F8FB;--ink:#16263B;--mute:#5B6B7F;--line:#DCE3EC;
+--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif}
+:lang(ar){--serif:'Cairo',serif;--sans:'Cairo',system-ui,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#fff;color:#0D3B66;}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px);margin-bottom:20px}
 
-/* Header */
-header{
-  height:14vh;          /* صغّرها (جرب 12–16 حسب ذوقك) */
-  min-height:90px;      /* ليضل مرتب عالموبايل */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:fixed;       /* ثابت */
-  top:0;
-  left:0;
-  width:100%;
-  background:#fff;
-  border-bottom:4px solid #1E6091;
-  z-index:1000;
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,45,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+nav img{height:40px;width:auto;background:#fff;padding:4px 8px;border-radius:6px}
+.links{display:flex;gap:28px;font-size:15px}
+.links a{color:#cfd9e6;text-decoration:none}
+.links a:hover{color:var(--brass)}
+.lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:6px;overflow:hidden}
+.lang button{background:none;border:0;color:#cfd9e6;padding:6px 11px;font:600 13px var(--sans);cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--brass);color:var(--deep)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;background:linear-gradient(rgba(6,23,45,.78),rgba(6,23,45,.86)),url(home1.jpg) center/cover,var(--deep);color:#fff;overflow:hidden;padding:110px 0 70px}
+.sigma{position:absolute;inset-inline-end:-4%;top:50%;transform:translateY(-50%);font:600 clamp(380px,60vw,820px)/1 var(--serif);color:transparent;-webkit-text-stroke:1.5px rgba(194,162,107,.35);user-select:none;pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(40px,7vw,84px);max-width:11em}
+.hero h1 span{display:block}
+.hero h1 span+span{color:var(--brass)}
+.hero p{max-width:34em;margin:28px 0 36px;color:#c4d0df;font-size:19px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:600;text-decoration:none;border:1px solid var(--brass);transition:.2s}
+.btn.p{background:var(--brass);color:var(--deep)}
+.btn.p:hover{background:#d4b57c}
+.btn.g{color:#fff}
+.btn.g:hover{background:rgba(255,255,255,.08)}
+.reveal>*{opacity:0;transform:translateY(22px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal>*:nth-child(2){animation-delay:.15s}.reveal>*:nth-child(3){animation-delay:.3s}
+@keyframes up{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal>*{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* facts */
+.facts{background:var(--navy);color:#fff}
+.facts .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.facts div{padding:28px 24px;border-inline-start:1px solid rgba(255,255,255,.12)}
+.facts div:first-child{border:0}
+.facts b{display:block;font:600 30px var(--serif);color:var(--brass)}
+.facts span{font-size:14px;color:#b9c7d8}
+
+section{padding:96px 0}
+.two{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.lead{color:var(--mute);max-width:36em}
+.lead+.lead{margin-top:14px}
+
+/* services as ruled list */
+.svc{border-top:2px solid var(--navy)}
+.svc div{display:grid;gap:6px;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc h3{font-size:21px}
+.svc p{color:var(--mute)}
+
+/* why */
+.why{background:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid var(--line)}
+.grid div{padding:32px;border:1px solid var(--line);margin:-.5px}
+.grid h3{font-size:20px;margin-bottom:10px;color:var(--blue)}
+.grid p{color:var(--mute);font-size:16px}
+
+/* ceo */
+.ceo{background:var(--navy);color:#fff}
+.ceo h2{color:#fff}
+.ceo .name{font:600 clamp(26px,3vw,34px) var(--serif);color:var(--brass)}
+.ceo .role{color:#b9c7d8;margin-bottom:24px}
+.ceo p{color:#d3dce8;margin-bottom:14px}
+.ceo ul{list-style:none;margin-top:8px}
+.ceo li{padding:14px 0;border-top:1px solid rgba(255,255,255,.14);color:#e4ebf3}
+.ceo a{color:var(--brass)}
+
+.pic{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin-top:28px;box-shadow:0 18px 40px -18px rgba(6,23,45,.45)}
+.ceo .pic{aspect-ratio:4/5;max-width:340px}
+.vband{background:linear-gradient(rgba(10,35,66,.86),rgba(10,35,66,.86)),url(vision1.jpg) center/cover,var(--navy);color:#fff;padding:96px 0;text-align:center}
+.vband p{font:500 clamp(22px,3vw,32px)/1.4 var(--serif);max-width:28em;margin:0 auto}
+.soc{display:flex;gap:14px;margin-top:6px;flex-wrap:wrap}
+.soc img{width:40px;height:40px;object-fit:contain;transition:transform .2s}
+.soc a:hover img{transform:scale(1.12)}
+/* contact */
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:14px 28px;margin:24px 0 30px}
+.contact dt{font-weight:600;color:var(--blue)}
+.contact dd a{text-decoration:none;border-bottom:1px solid var(--brass)}
+.contact .btn{color:var(--navy);border-color:var(--navy);margin-inline-end:10px;margin-bottom:10px}
+.contact .btn:hover{background:var(--navy);color:#fff}
+footer{background:var(--deep);color:#8fa1b8;text-align:center;padding:26px;font-size:14px}
+
+@media(max-width:820px){
+.links{display:none}
+.two{grid-template-columns:1fr;gap:16px}
+.facts .wrap{grid-template-columns:1fr}
+.facts div{border:0;border-top:1px solid rgba(255,255,255,.12);padding:18px 24px}
+section{padding:64px 0}
+.sigma{opacity:.6}
 }
-
-
-
-/* Language Dropdown */
-.lang-dropdown{position:absolute; top:15px; right:20px; z-index:4;}
-.lang-dropdown button{background:#0D3B66; color:#fff; border:none; padding:6px 10px; border-radius:4px; cursor:pointer;}
-.lang-menu{display:none; position:absolute; top:30px; right:0; background:#0D3B66; border-radius:4px; overflow:hidden; z-index:1000;}
-.lang-menu button{width:100%; background:none; color:#fff; border:none; padding:6px 10px; cursor:pointer;}
-.lang-menu button:hover{background:#1E6091}
-
-
-
-/* Main Content */
-
-.main-content{
-  min-height:50vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-  background:#EAF2F8;
-  margin-top:14vh; /* 👈 أضف هالسطر */
-}
-.content-container{display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start;}
-.content-text{
-  width:100%;
-  background-color:#EEF4F8;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  text-align:left;   /* EN / FR */
-}
-
-body.rtl .content-text{
-  text-align:right;  /* AR */
-}
-.content-image{width:320px; height:300px;}
-.content-image img{width:100%; height:100%; object-fit:cover; border-radius:20px;}
-
-/* Footer Squares */
-.footer{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; padding:10px; background-color: #1E6091;}
-.box{aspect-ratio:1/1; background-size:cover; background-position:center; border-radius:8px; position:relative; cursor:pointer; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease;}
-.box:hover{ transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,.25);}
-.box .label{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  background:rgba(0,0,0,.55);
-  color:#fff;
-  font-weight:bold;
-  text-align:center;
-  padding:10px 6px;
-  font-size:14px;
-}
-.box .arrow{position:absolute; bottom:10px; right:12px; font-size:20px; color:white; opacity:0; transform:translateX(-5px); transition:all .3s ease;}
-.box:hover .arrow{ opacity:1; transform:translateX(5px); }
-
-
-/* Logo default (Laptop / Desktop) */
-header img{
-  max-height:130px;   /* الحجم المناسب عاللابتوب */
-  width:auto;
-}
-
-
-/* Mobile */
-@media(max-width:767px){
-  .footer{ grid-template-columns:repeat(2,1fr); }
-  .content-container{ grid-template-columns: 1fr; } 
-}
-
-
-@media(max-width:767px){
-  .main-content{
-    margin-top:100px;
-  }
-}
-
-
-@media (max-width: 767px){
-  .lang-dropdown button{
-    font-size:10px;      /* تصغير النص والأيقونة 🌐 */
-    padding:3px 6px;     /* تصغير الزر */
-  }
-}
-
-.contact-icons{
-  display:flex;
-  gap:15px;
-  margin-top:20px;
-}
-
-/* Logo size on mobile */
-@media (max-width: 767px){
-  header img{
-    max-height:70px;  /* أصغر شوي للموبايل */
-    width:auto;
-  }
-  .lang-dropdown{ top:10px; right:10px; }
-}
-
-
-.contact-icons img{
-  width:36px;
-  height:36px;
-  object-fit:contain;
-  transition:.25s;
-}
-
-.contact-icons img:hover{
-  transform:scale(1.15);
-}
-
-.map-btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 14px;
-  background:#1E6091;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-  font-size:14px;
-}
-
-.map-btn:hover{
-  background:#0D3B66;
-}
-
-
-.home-float {
-  position: fixed; /* ثابت بالنسبة للشاشة */
-  top: 10px;
-  left: 10px; /* مكانها الثابت */
-  z-index: 9999;
-  direction: ltr; /* تمنع أي تأثير RTL داخلي */
-}
-
-.home-float img{
-  width:40px;
-  height:40px;
-  position:fixed;
-  cursor:pointer;
-  transition:transform .25s ease;
-}
-
-.home-float img:hover{
-  transform:scale(1.15);
-}
-
-
-
-.hero-title{
-  display:flex;
-  flex-direction:column;   /* 👈 كل جملة بسطر */
-  gap:6px;
-  font-size:28px;
-  font-weight:700;
-  line-height:1.2;
-  color:#0D3B66;
-}
-
-.title-main{
-  white-space:nowrap;      /* 👈 يمنع Professional / Advice يفترقوا */
-}
-.hero-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start; /* صار كل شي على الشمال */
-  gap: 40px; 
-  flex-wrap: wrap;
-}
-
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #0D3B66;
-  text-align: left; /* العنوان على الشمال */
-}
-
-.hero-side-vertical {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #0D3B66;
-  position: relative;
-  top: 13px;          /* خليه زي ما عملنا للارتفاع */
-  left: -35px;         /* هذي تنقل كل الـ dash + text شوي عاليسار */
-}
-
-.hero-dash {
-  width: 40px;
-  height: 3px; 
-  background: #0D3B66;
-  margin-bottom: 5px;
-}
-
-.hero-side-text div {
-  display: block; 
-  line-height: 1.2;
-}
-
-.hero-side-text div:nth-child(2) {
-  color: #6B7280;
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .hero-title {
-    font-size: 18px;
-    gap: 4px;
-  }
-
-  .hero-side-vertical {
-    font-size: 9px;
-    gap: 2px;
-  }
-
-  .hero-dash {
-    width: 30px;
-  position: relative;
-  top: 2px; 
-  left: -6px;
-  }
-}
-
 </style>
 </head>
-
 <body>
+<nav><div class="wrap">
+<a href="#top"><img src="logo.png" alt="Sigma Insurance Consultants"></a>
+<div class="links"><a href="#about" data-k="n_about"></a><a href="#services" data-k="n_services"></a><a href="#why" data-k="n_why"></a><a href="#ceo" data-k="n_ceo"></a><a href="#contact" data-k="n_contact"></a></div>
+<div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="fr">FR</button><button data-l="ar">AR</button></div>
+</div></nav>
 
-<header>
-
-  <img src="logo.png" loading="eager"  alt="Sigma Insurance">
-  <div class="lang-dropdown">
-    <button id="langBtn">🌐ENG ▼</button>
-    <div id="langMenu" class="lang-menu">
-      <button onclick="setLang('en')">ENG</button>
-      <button onclick="setLang('fr')">FR</button>
-      <button onclick="setLang('ar')">AR</button>
-    </div>
-  </div>
+<header class="hero" id="top">
+<div class="sigma" aria-hidden="true">Σ</div>
+<div class="wrap reveal">
+<h1><span data-k="h1a"></span><span data-k="h1b"></span></h1>
+<p data-k="sub"></p>
+<div class="btns"><a class="btn p" href="#contact" data-k="cta1"></a><a class="btn g" href="#services" data-k="cta2"></a></div>
+</div>
 </header>
 
+<div class="facts"><div class="wrap">
+<div><b>21+</b><span data-k="f1"></span></div>
+<div><b>MDRT</b><span data-k="f2"></span></div>
+<div><b>100%</b><span data-k="f3"></span></div>
+</div></div>
 
-<a href="#" class="home-float" onclick="showContent('home')">
-  <img src="home.png" alt="Home">
-</a>
+<section id="about"><div class="wrap two">
+<div><h2 data-k="t_about"></h2><img class="pic" src="team1.jpg" alt="Sigma team" onerror="this.remove()"></div>
+<div><p class="lead" data-k="about1"></p><p class="lead" data-k="about2"></p></div>
+</div></section>
 
+<section class="vband"><div class="wrap"><p data-k="vision"></p></div></section>
 
-<div class="main-content">
-  <div id="main-text"></div>
+<section id="services" style="background:#fff"><div class="wrap two">
+<div><h2 data-k="t_services"></h2><img class="pic" src="services1.jpg" alt="Services" onerror="this.remove()"></div>
+<div class="svc" id="svc"></div>
+</div></section>
+
+<section id="why" class="why" style="background:var(--paper)"><div class="wrap two">
+<div><h2 data-k="t_why"></h2><img class="pic" src="why1.jpg" alt="Why Sigma" onerror="this.remove()"></div>
+<div class="grid" id="whyGrid"></div>
+</div></section>
+
+<section id="ceo" class="ceo"><div class="wrap two">
+<div>
+<h2 data-k="t_ceo"></h2>
+<div class="name"><a href="https://www.linkedin.com/in/ftouni-ayman-852865b9" target="_blank" rel="noopener" data-k="ceoName"></a></div>
+<div class="role" data-k="ceoRole"></div>
+<img class="pic" src="ceo1.jpg" alt="Ayman Ftouni" onerror="this.remove()">
 </div>
+<div>
+<p data-k="ceo1"></p>
+<ul id="ceoList"></ul>
+</div>
+</div></section>
 
-<div class="footer" id="footer"></div>
+<section id="contact" class="contact"><div class="wrap two">
+<div><h2 data-k="t_contact"></h2><p class="lead" data-k="contactIntro"></p><img class="pic" src="contact1.jpg" alt="Sigma office, Beirut" onerror="this.remove()"></div>
+<div>
+<dl>
+<dt data-k="addrL"></dt><dd data-k="addr"></dd>
+<dt data-k="phoneL"></dt><dd><a href="tel:+9611788669" dir="ltr">01 788 669</a></dd>
+<dt>Email</dt><dd><a href="mailto:management@sigma-leb.com">management@sigma-leb.com</a></dd>
+</dl>
+<a class="btn" href="https://maps.app.goo.gl/pTd21eFbWSFNJcnt7" target="_blank" rel="noopener" data-k="map"></a>
+<div class="soc">
+<a href="https://wa.me/96103977867" target="_blank" rel="noopener"><img src="whatsapp.png" alt="WhatsApp"></a>
+<a href="https://www.instagram.com/sigma_insurance_" target="_blank" rel="noopener"><img src="instagram.png" alt="Instagram"></a>
+<a href="https://lb.linkedin.com/in/ftouni-ayman-852865b9" target="_blank" rel="noopener"><img src="linkedin.png" alt="LinkedIn"></a>
+<a href="mailto:management@sigma-leb.com"><img src="email.png" alt="Email"></a>
+</div>
+</div>
+</div></section>
+
+<footer>© <span id="yr"></span> Sigma Insurance Consultants</footer>
 
 <script>
+const T={
+en:{n_about:"About",n_services:"Services",n_why:"Why Sigma",n_ceo:"Leadership",n_contact:"Contact",
+h1a:"Professional Advice.",h1b:"Powerful Protection.",
+sub:"Independent insurance advisory for businesses, institutions and individuals across Lebanon and the region.",
+cta1:"Speak to an advisor",cta2:"Our services",
+f1:"Years of proven market experience",f2:"Million Dollar Round Table member",f3:"Independent – tied to no single insurer",
+t_about:"Advice you can trust, built on independence",
+about1:"Sigma is an independent insurance brokerage providing tailored insurance solutions, risk assessment and strategic advisory. We act solely in our clients’ best interests.",
+about2:"Our team brings backgrounds in consultancy, underwriting, risk management and claims handling. We work with you from the first assessment to claims resolution, and treat your risks as our own.",
+vision:"Our vision: to be a trusted leader in insurance consultancy, moving beyond transactions to long-term partnerships where insurance becomes a proactive tool for protection, resilience and growth.",
+t_services:"What we do beyond placement",
+svc:[["Risk Assessment & Analysis","Identifying exposures and evaluating risks to design effective, sustainable insurance structures."],["Program Design & Optimization","Customized coverage, policy reviews, and better limits, conditions and cost efficiency."],["Market Negotiation & Placement","Strong relationships with insurers and reinsurers to secure optimal terms, breadth and pricing."],["Claims Advisory & Critical Claims","Hands-on support in complex and high-value claims to protect your interests and speed up resolution."],["Policy Review & Ongoing Advisory","Continuous evaluation so your program keeps pace with evolving risks, operations and regulation."],["Independent Second Opinions","Professional review and advice even when coverage is placed outside our network."]],
+t_why:"Why choose Sigma",
+why:[["Independent & client-centric","We are not tied to any single insurer. Recommendations are based solely on your risk profile."],["Beyond policy placement","Risk assessment, program design, policy optimization and continuous advisory."],["Market & reinsurance access","Established relationships with leading local and international insurers and reinsurers."],["Expert claims support","We stand by you when it matters most, including complex and high-value claims."],["Long-term partnership","Solutions that adapt as your risks and objectives evolve."]],
+t_ceo:"Leadership",ceoName:"Ayman Ftouni",ceoRole:"Founder & Chief Executive Officer",
+ceo1:"With over 21 years of experience, Ayman Ftouni is recognized for supporting the modernization of insurance consultancy in Lebanon and across regional and international markets. His approach turns insurance from a transactional service into a strategic risk-management and financial planning tool.",
+ceo:["Founder of an independent consultancy model built on advisory excellence rather than sales-driven intermediation","Author of insurance research registered at the Intellectual Property Office, Ministry of Economy (No. 6377)","Member of the Million Dollar Round Table (MDRT)","Extensive collaboration with international insurance and reinsurance markets"],
+t_contact:"Contact us",contactIntro:"Tell us about your risks. We will tell you how to protect against them.",addrL:"Address",addr:"Ramlet el Bayda, Beirut<br>Middle East Bldg, 5th Floor",phoneL:"Phone",map:"Google Maps"},
 
-let currentPage = "home"; // الصفحة الحالية
+fr:{n_about:"À propos",n_services:"Services",n_why:"Pourquoi Sigma",n_ceo:"Direction",n_contact:"Contact",
+h1a:"Conseil Professionnel.",h1b:"Protection Puissante.",
+sub:"Conseil en assurance indépendant pour les entreprises, institutions et particuliers au Liban et dans la région.",
+cta1:"Parler à un conseiller",cta2:"Nos services",
+f1:"Années d’expérience éprouvée sur le marché",f2:"Membre du Million Dollar Round Table",f3:"Indépendants – liés à aucun assureur",
+t_about:"Un conseil fiable, fondé sur l’indépendance",
+about1:"Sigma est un cabinet de courtage en assurances indépendant proposant des solutions sur mesure, l’évaluation des risques et du conseil stratégique. Nous agissons exclusivement dans l’intérêt de nos clients.",
+about2:"Notre équipe réunit des parcours en conseil, souscription, gestion des risques et sinistres. Nous vous accompagnons de l’évaluation initiale au règlement des sinistres, et traitons vos risques comme les nôtres.",
+vision:"Notre vision : être un leader de confiance du conseil en assurance, dépasser la transaction pour bâtir des partenariats durables où l’assurance devient un outil proactif de protection, de résilience et de croissance.",
+t_services:"Ce que nous faisons au-delà du placement",
+svc:[["Évaluation & Analyse des Risques","Identification des expositions et évaluation des risques pour concevoir des structures d’assurance efficaces et durables."],["Conception & Optimisation des Programmes","Couvertures sur mesure, revue des polices, amélioration des limites, conditions et coûts."],["Négociation & Placement","Relations solides avec assureurs et réassureurs pour obtenir conditions, couverture et tarifs optimaux."],["Conseil en Sinistres & Sinistres Majeurs","Accompagnement actif sur les dossiers complexes et de grande valeur pour protéger vos intérêts."],["Revue des Polices & Conseil Continu","Évaluation continue pour suivre l’évolution des risques, des opérations et de la réglementation."],["Avis Indépendants","Analyses et conseils professionnels même lorsque la couverture est placée hors de notre réseau."]],
+t_why:"Pourquoi choisir Sigma",
+why:[["Conseil indépendant & centré client","Nous ne sommes liés à aucun assureur. Nos recommandations reposent sur votre profil de risque."],["Au-delà du placement","Évaluation des risques, conception de programmes, optimisation et accompagnement continu."],["Accès au marché & à la réassurance","Relations établies avec des assureurs et réassureurs locaux et internationaux."],["Expertise sinistres","À vos côtés quand cela compte le plus, y compris sur les dossiers complexes."],["Partenariat à long terme","Des solutions qui évoluent avec vos risques et vos objectifs."]],
+t_ceo:"Direction",ceoName:"Ayman Ftouni",ceoRole:"Fondateur & Directeur Général",
+ceo1:"Fort de plus de 21 ans d’expérience, Ayman Ftouni est reconnu pour sa contribution à la modernisation du conseil en assurance au Liban et sur les marchés régionaux et internationaux. Son approche transforme l’assurance en un outil stratégique de gestion des risques et de planification financière.",
+ceo:["Fondateur d’un modèle de conseil indépendant fondé sur l’excellence plutôt que sur la vente","Auteur d’une recherche en assurance enregistrée à l’Office de la Propriété Intellectuelle, Ministère de l’Économie (n° 6377)","Membre du Million Dollar Round Table (MDRT)","Collaboration étendue avec les marchés internationaux de l’assurance et de la réassurance"],
+t_contact:"Contactez-nous",contactIntro:"Parlez-nous de vos risques. Nous vous dirons comment vous en protéger.",addrL:"Adresse",addr:"Ramlet el Bayda, Beyrouth<br>Middle East Bldg, 5e étage",phoneL:"Téléphone",map:"Google Maps"},
 
-// ===== Translations =====
-let currentLang="en";
-
-const translations={
-  en:{
-
-     home:[`
-<div class="hero-container">
-  <div class="hero-title">
-    <span class="title-main">Professional Advice.</span>
-    <span class="title-main">Powerful Protection.</span>
-  </div>
-
-  <div class="hero-side-vertical">
-    <div class="hero-dash"></div>
-    <div class="hero-side-text">
-      <div>Strategic</div>
-      <div>Planning</div>
-    </div>
-  </div>
-</div>
-`,"<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. ","<br><strong>Sigma</strong> is an independent insurance brokerage firm providing tailored insurance solutions, risk assessment, and strategic advisory services. <p>Backed by a team of advisors with over <strong>21 years of proven market experience</strong>, we act solely in our clients’ best interests, delivering transparent and reliable coverage designed to protect assets, businesses, and individuals in an ever-changing risk environment.</p>"],
-    team:["Our Team","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people....","<br>At <strong>Sigma</strong> Insurance Consultants, our strength lies in the expertise, integrity, and dedication of our people.<br><p>Our team is composed of qualified insurance professionals with diverse backgrounds in insurance consultancy, underwriting, risk management, and claims handling.<br><br>Each member brings practical market knowledge and a client-focused mindset, ensuring that every solution we deliver is both technically sound and commercially effective.<br><p>We operate as one unified advisory team—working closely with clients, insurers, and reinsurers to provide clear guidance, timely support, and sustainable insurance strategies.<br><br>Continuous professional development and adherence to international best practices are core to our culture, allowing us to remain aligned with evolving market standards.<br><p>What truly distinguishes our team is our commitment to long-term relationships.<br><br>We take the time to understand each client’s unique needs and stand by them throughout the policy lifecycle—from initial assessment to claims resolution.<p>At <strong>Sigma</strong>, you are supported by a team that treats your risks as its own."],
-    services:["Services","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li>Insurance Program Design & Optimization...</li></ul>","<br><strong>In addition to our intermediary services, we offer:</strong><p><br><ul><li>Risk Assessment & Analysis.</li><li><p>Identifying exposures and evaluating risks to design effective and sustainable insurance structures.</li><li><p>Insurance Program Design & Optimization.</li><li><p>Structuring customized coverage solutions, reviewing existing policies, and enhancing limits, conditions, and cost efficiency.</li><li><p>Market Negotiation & Placement Support.</li><li><p>Leveraging our strong relationships with insurers and reinsurers to secure optimal terms, coverage breadth, and pricing.</li><li><p>Claims Advisory & Critical Claims Support.</li><li><p>Providing hands-on assistance during claims, including complex and high-value cases, to protect our clients’ interests and accelerate resolutions.</li><li><p>Policy Review & Ongoing Advisory.</li><li><p>Continuous evaluation of insurance programs to ensure alignment with evolving risks, operations, and regulatory requirements.<p>Independent Second Opinions.</li><li><p>Offering professional reviews and advice even when coverage is placed outside our network.</li><li><p>Our clients benefit from an advisory-driven approach built on transparency, technical expertise, and long-term partnership—ensuring insurance is a proactive risk management tool, not merely a transactional product.</li></ul>"],
-    vision:["Our Vision","<br>To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry....","<br>To be a trusted leader in insurance consultancy, recognized for delivering strategic, transparent, and client-focused risk solutions that set new standards of professionalism and value in the insurance industry.<p><br>We aspire to redefine the role of the insurance advisor by moving beyond transactions toward long-term partnerships—where insurance becomes a proactive tool for protection, resilience, and sustainable growth."],
-   
- 
-ceo:[
-  "CEO Biography",
-  "<br><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong>.<p><strong>Chief Executive Officer – <strong>Sigma</strong> Insurance Consultants.</strong></p><br><p><strong>Executive Overview</strong></p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong> is the Chief Executive Officer of <strong>Sigma</strong> Insurance Consultants, an independent insurance advisory firm specializing in insurance consultancy, risk analysis, and strategic insurance solutions. With over 21 years of professional experience, he is recognized for his role in supporting the development and modernization of insurance consultancy practices in Lebanon and across regional and international markets.",
-  "<br><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong>.<p><strong>Chief Executive Officer – <strong>Sigma</strong> Insurance Consultants.</strong></p><br><p><strong>Executive Overview</strong></p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong> is the Chief Executive Officer of <strong>Sigma</strong> Insurance Consultants, an independent insurance advisory firm specializing in insurance consultancy, risk analysis, and strategic insurance solutions. With over 21 years of professional experience, he is recognized for his role in supporting the development and modernization of insurance consultancy practices in Lebanon and across regional and international markets.<br><br><strong>Profissionel Background</strong><p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Mr. Ftouni</a></strong> has built his career on advancing insurance consultancy as a structured, analytical, and client-centric discipline. His work focuses on transforming insurance from a transactional service into a strategic risk-management and financial planning tool. His advisory approach emphasizes accuracy, transparency, structured risk evaluation, and long-term alignment with clients’ financial and operational objectives.</p><br><strong>Key Achievements & Professional Milestones:</strong><ul><li>Founder & CEO of <strong>Sigma</strong> Insurance Consultants, leading an independent consultancy model based on advisory excellence rather than sales-driven intermediation.</li><li>Author of a specialized insurance research officially registered with the Intellectual Property Office at the Ministry of Economy (Registration No. 6377).</li><li>Member of the Million Dollar Round Table (MDRT)—an internationally recognized, independent association representing excellence, ethics, and global performance standards.</li><li>Over two decades of industry experience serving corporate, institutional, and individual clients.</li><li>Extensive collaboration with international insurance and reinsurance markets.</li></ul><p><br><strong>Certifications & Professional Development:</strong><br><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Mr. Ftouni</a></strong> holds multiple professional and leadership certifications in insurance and risk management, reflecting a commitment to global standards and continuous professional development.<p><br><strong>Market Exposure & Strategic Relationships:</strong><br>Through collaboration with local and international insurers and reinsurers, <strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Mr. Ftouni</a></strong> has developed strong professional relationships that enhance <strong>Sigma’s</strong> ability to deliver competitive, sustainable, and well-structured insurance solutions.<p><br><strong>Leadership Philosophy & Vision:</strong><br> As CEO, <strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong> leads Sigma Insurance Consultants with a philosophy centered on independence, professional integrity, and clarity in advisory services. Under his leadership, <strong>Sigma</strong> continues to strengthen its reputation as a trusted insurance consultancy partner for clients navigating complex insurance environments."
-],
-
-
-
-contact:[
-  "Contact Us",
-  "Contact overview...",
-  `
-  <div class="contact-container">
-    <p><strong>Address:</strong>
-    Beirut - Ramlet el Bayda<br>
-    Middle East Bldg - 5th Floor
-    </p>
-
-    <p><strong>Phone:</strong> 01788669</p>
-    <p><strong>Email:</strong> <a href="mailto:management@sigma-leb.com">management@sigma-leb.com</a></p>
-
-    <a class="map-btn"
-       href="https://maps.app.goo.gl/pTd21eFbWSFNJcnt7"
-       target="_blank">
-      📍 Open in Google Maps
-    </a>
-
-    <div class="social-icons-contact">
-      <a href="https://wa.me/96103977867" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp">
-      </a>
-      <a href="https://www.instagram.com/sigma_insurance_" target="_blank">
-        <img src="instagram.png" alt="Instagram">
-      </a>
-      <a href="https://lb.linkedin.com/in/ftouni-ayman-852865b9" target="_blank">
-        <img src="linkedin.png" alt="Linkedin">
-      </a>
-      <a href="mailto:management@sigma-leb.com" target="_blank">
-        <img src="email.png" alt="Email">
-      </a>
-    </div>
-  </div>
-  `
-],
-
-why: [
-  "Why Choose Sigma",
-  "<br><strong>Independent & Client-Centric Advice.</strong><p>We are not tied to any single insurer.<br>Our recommendations are based solely on your risk profile and best interests...",
-  `
-  <br><p><strong>Independent & Client-Centric Advice.</strong></p>
-  <p>We are not tied to any single insurer. Our recommendations are based solely on your risk profile and best interests.</p>
-
-  <br><p><strong>Beyond Policy Placement</strong>.</p>
-  <p>We go further than the traditional intermediary role—offering risk assessment, program design, policy optimization, and continuous advisory support.</p>
-
-  <br><p><strong>Strong Market & Reinsurance Access.</strong></p>
-  <p>Our established relationships with leading local and international insurers and reinsurers allow us to negotiate superior coverage terms and pricing.</p>
-
-  <br><p><strong>Expert Claims Support.</strong></p>
-  <p>We stand by our clients when it matters most, providing hands-on support during claims, including complex and high-value cases.</p>
-
-  <br><p><strong>Long-Term Partnership Approach.</strong></p>
-  <p>We focus on building lasting relationships, adapting your insurance solutions as your risks and objectives evolve.</p>
-  `
-]},
-
-
-fr:{
-
-home:[
-  `<div class="hero-container">
-  <div class="hero-title">
-    <span class="title-main">Conseil Professionnel.</span>
-    <span class="title-main">Protection Puissante.</span>
-  </div>
-
-  <div class="hero-side-vertical">
-    <div class="hero-dash"></div>
-    <div class="hero-side-text">
-      <div>Stratégique</div>
-      <div>Planification</div>
-    </div>
-  </div>
-</div>`,
-  "<br><strong>Sigma</strong> est un cabinet de courtage en assurances indépendant offrant des solutions d’assurance sur mesure, l’évaluation des risques et des services de conseil stratégique.",
-  "<br><strong>Sigma</strong> est un cabinet de courtage en assurances indépendant offrant des solutions d’assurance sur mesure, l’évaluation des risques et des services de conseil stratégique.<p>Soutenus par une équipe de conseillers disposant de plus de <strong>21 années d’expérience éprouvée sur le marché</strong>, nous agissons exclusivement dans l’intérêt de nos clients, en proposant des couvertures transparentes et fiables, conçues pour protéger les actifs, les entreprises et les particuliers dans un environnement de risques en constante évolution.</p>"
-],
-
-team:[
-  "Notre Équipe",
-  "<br>Chez <strong>Sigma</strong> Insurance Consultants, notre force réside dans l’expertise, l’intégrité et l’engagement de nos équipes....",
-  "<br>Chez <strong>Sigma</strong> Insurance Consultants, notre force réside dans l’expertise, l’intégrité et l’engagement de nos équipes.<br><p>Notre équipe est composée de professionnels qualifiés de l’assurance, issus de parcours variés en conseil en assurance, souscription, gestion des risques et traitement des sinistres.<br><br>Chaque membre apporte une connaissance pratique du marché et une approche centrée sur le client, garantissant que chaque solution proposée soit à la fois techniquement solide et commercialement efficace.<br><p>Nous opérons comme une seule équipe de conseil unifiée, travaillant en étroite collaboration avec les clients, les assureurs et les réassureurs afin de fournir des orientations claires, un soutien rapide et des stratégies d’assurance durables.<br><br>Le développement professionnel continu et le respect des meilleures pratiques internationales constituent le cœur de notre culture, nous permettant de rester alignés avec l’évolution des standards du marché.<br><p>Ce qui distingue véritablement notre équipe est son engagement envers des relations à long terme.<br><br>Nous prenons le temps de comprendre les besoins uniques de chaque client et les accompagnons tout au long du cycle de vie des polices, de l’évaluation initiale jusqu’au règlement des sinistres.<p>Chez <strong>Sigma</strong>, vous êtes accompagné par une équipe qui considère vos risques comme les siens."
-],
-
-services:[
-  "Services",
-  "<br><strong>En complément de nos services d’intermédiation, nous proposons :</strong><p><br><ul><li>Évaluation & Analyse des Risques.</li><li>Identification des expositions et évaluation des risques afin de concevoir des structures d’assurance efficaces et durables.</li><li>Conception & Optimisation des Programmes d’Assurance...</li></ul>",
-  "<br><strong>En complément de nos services d’intermédiation, nous proposons :</strong><p><br><ul><li>Évaluation & Analyse des Risques.</li><li><p>Identification des expositions et évaluation des risques afin de concevoir des structures d’assurance efficaces et durables.</li><li><p>Conception & Optimisation des Programmes d’Assurance.</li><li><p>Structuration de solutions de couverture sur mesure, révision des polices existantes et amélioration des limites, conditions et de l’efficacité des coûts.</li><li><p>Négociation & Placement sur le Marché.</li><li><p>Exploitation de nos relations solides avec les assureurs et réassureurs afin d’obtenir des conditions optimales, une couverture étendue et une tarification compétitive.</li><li><p>Conseil en Sinistres & Assistance pour Sinistres Majeurs.</li><li><p>Accompagnement actif lors des sinistres, y compris les dossiers complexes et de grande valeur, afin de protéger les intérêts de nos clients et accélérer les règlements.</li><li><p>Revue des Polices & Conseil Continu.</li><li><p>Évaluation continue des programmes d’assurance afin de garantir leur adéquation avec l’évolution des risques, des opérations et des exigences réglementaires.<p>Avis Indépendants.</li><li><p>Fourniture d’analyses et de conseils professionnels même lorsque la couverture est placée en dehors de notre réseau.</li><li><p>Nos clients bénéficient d’une approche de conseil fondée sur la transparence, l’expertise technique et le partenariat à long terme, garantissant que l’assurance soit un outil proactif de gestion des risques et non un simple produit transactionnel.</li></ul>"
-],
-
-vision:[
-  "Notre Vision",
-  "<br>Être un leader de confiance en conseil en assurance, reconnu pour la fourniture de solutions stratégiques, transparentes et centrées sur le client, établissant de nouveaux standards de professionnalisme et de valeur dans le secteur de l’assurance....",
-  "<br>Être un leader de confiance en conseil en assurance, reconnu pour la fourniture de solutions stratégiques, transparentes et centrées sur le client, établissant de nouveaux standards de professionnalisme et de valeur dans le secteur de l’assurance.<p><br>Nous aspirons à redéfinir le rôle du conseiller en assurance en dépassant les transactions au profit de partenariats durables, où l’assurance devient un outil proactif de protection, de résilience et de croissance durable."
-],
-
-ceo:[
-  "Biographie du PDG",
-  "<br><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong>.<p><strong>Directeur Général – <strong>Sigma</strong> Insurance Consultants.</strong></p><br><p><strong>Présentation Exécutive</strong></p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong> est le Directeur Général de <strong>Sigma</strong> Insurance Consultants, un cabinet indépendant de conseil en assurances spécialisé dans la consultance en assurance, l’analyse des risques et les solutions stratégiques d’assurance. Fort de plus de 21 ans d’expérience professionnelle, il est reconnu pour son rôle dans le soutien au développement et à la modernisation des pratiques de conseil en assurance au Liban ainsi que sur les marchés régionaux et internationaux.",
-  "<br><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong>.<p><strong>Directeur Général – <strong>Sigma</strong> Insurance Consultants.</strong></p><br><p><strong>Présentation Exécutive</strong></p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong> est le Directeur Général de <strong>Sigma</strong> Insurance Consultants, un cabinet indépendant de conseil en assurances spécialisé dans la consultance en assurance, l’analyse des risques et les solutions stratégiques d’assurance. Fort de plus de 21 ans d’expérience professionnelle, il est reconnu pour son rôle dans le soutien au développement et à la modernisation des pratiques de conseil en assurance au Liban ainsi que sur les marchés régionaux et internationaux.<br><br><strong>Parcours Professionnel</strong><p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>M. Ftouni</a></strong> a bâti sa carrière en développant le conseil en assurance comme une discipline structurée, analytique et centrée sur le client. Son travail vise à transformer l’assurance d’un service transactionnel en un outil stratégique de gestion des risques et de planification financière. Son approche de conseil met l’accent sur la précision, la transparence, l’évaluation structurée des risques et l’alignement à long terme avec les objectifs financiers et opérationnels des clients.</p><br><strong>Réalisations Clés & Étapes Professionnelles :</strong><ul><li>Fondateur & Directeur Général de <strong>Sigma</strong> Insurance Consultants, dirigeant un modèle de conseil indépendant fondé sur l’excellence du conseil plutôt que sur l’intermédiation axée sur la vente.</li><li>Auteur d’une recherche spécialisée en assurance officiellement enregistrée auprès de l’Office de la Propriété Intellectuelle du Ministère de l’Économie (Numéro d’enregistrement 6377).</li><li>Membre du Million Dollar Round Table (MDRT) — une association internationale indépendante représentant l’excellence, l’éthique et des standards de performance mondiaux.</li><li>Plus de deux décennies d’expérience dans le secteur au service de clients corporatifs, institutionnels et individuels.</li><li>Collaboration étendue avec les marchés internationaux de l’assurance et de la réassurance.</li></ul><p><br><strong>Certifications & Développement Professionnel :</strong><br><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>M. Ftouni</a></strong> détient plusieurs certifications professionnelles et de leadership en assurance et en gestion des risques, reflétant son engagement envers les standards internationaux et le développement professionnel continu.<p><br><strong>Exposition aux Marchés & Relations Stratégiques :</strong><br>Grâce à sa collaboration avec des assureurs et réassureurs locaux et internationaux, <strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>M. Ftouni</a></strong> a développé de solides relations professionnelles qui renforcent la capacité de <strong>Sigma</strong> à fournir des solutions d’assurance compétitives, durables et bien structurées.<p><br><strong>Philosophie de Leadership & Vision :</strong><br> En tant que Directeur Général, <strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>Ayman Ftouni</a></strong> dirige Sigma Insurance Consultants selon une philosophie fondée sur l’indépendance, l’intégrité professionnelle et la clarté des services de conseil. Sous sa direction, <strong>Sigma</strong> continue de renforcer sa réputation en tant que partenaire de conseil de confiance pour les clients évoluant dans des environnements d’assurance complexes."
-],
-
-contact:[
-  "Contactez-nous",
-  "Aperçu du contact...",
-  `
-  <div class="contact-container">
-    <p><strong>Adresse :</strong>
-    Beyrouth - Ramlet el Bayda<br>
-    Middle East Bldg - 5e étage
-    </p>
-
-    <p><strong>Téléphone :</strong> 017886690</p>
-    <p><strong>Email :</strong> <a href="mailto:management@sigma-leb.com">management@sigma-leb.com</a></p>
-
-    <a class="map-btn"
-       href="https://maps.app.goo.gl/pTd21eFbWSFNJcnt7"
-       target="_blank">
-      📍 Ouvrir dans Google Maps
-    </a>
-
-    <div class="social-icons-contact">
-      <a href="https://wa.me/96103977867" target="_blank"><img src="whatsapp.png"></a>
-      <a href="https://www.instagram.com/sigma_insurance_" target="_blank"><img src="instagram.png"></a>
-      <a href="https://lb.linkedin.com/in/ftouni-ayman-852865b9" target="_blank"><img src="linkedin.png" alt="Linkedin"></a>
-      <a href="mailto:management@sigma-leb.com" target="_blank"><img src="email.png"></a>
-    </div>
-  </div>
-  `
-],
-
-why:[
-  "Pourquoi Choisir Sigma",
-  "<br><strong>Conseil Indépendant & Centré Client.</strong><p>Nous ne sommes liés à aucun assureur unique...",
-  `
-  <br><p><strong>Conseil Indépendant & Centré Client.</strong></p>
-  <p>Nous ne sommes liés à aucun assureur unique. Nos recommandations reposent uniquement sur votre profil de risque et vos meilleurs intérêts.</p>
-
-  <br><p><strong>Au-delà du Placement des Polices.</strong></p>
-  <p>Nous allons au-delà du rôle traditionnel d’intermédiaire en proposant l’évaluation des risques, la conception des programmes, l’optimisation des polices et un accompagnement continu.</p>
-
-  <br><p><strong>Accès Fort aux Marchés & à la Réassurance.</strong></p>
-  <p>Nos relations établies avec des assureurs et réassureurs locaux et internationaux nous permettent de négocier des conditions de couverture et des tarifs supérieurs.</p>
-
-  <br><p><strong>Expertise en Gestion des Sinistres.</strong></p>
-  <p>Nous accompagnons nos clients lorsque cela compte le plus, en offrant une assistance active lors des sinistres, y compris les dossiers complexes et de grande valeur.</p>
-
-  <br><p><strong>Approche de Partenariat à Long Terme.</strong></p>
-  <p>Nous privilégions des relations durables et adaptons vos solutions d’assurance à l’évolution de vos risques et objectifs.</p>
-  `
-]
-
-},
-
-
-
-ar:{
-
-home:[
-  `<div class="hero-container">
-  <div class="hero-title">
-    <span class="title-main">استشارات مهنية.</span>
-    <span class="title-main">حماية قوية.</span>
-  </div>
-
-  <div class="hero-side-vertical">
-    <div class="hero-dash"></div>
-    <div class="hero-side-text">
-      <div>استراتيجي</div>
-      <div>تخطيط</div>
-    </div>
-  </div>
-</div>`,
-  "<br><p><strong>Sigma</strong> هي شركة وساطة تأمينية مستقلة تقدّم حلول تأمينية مخصّصة، وتقييمًا للمخاطر، وخدمات استشارية استراتيجية.</p>",
-  "<br><p><strong>Sigma</strong> هي شركة وساطة تأمينية مستقلة تقدّم حلول تأمينية مخصّصة، وتقييمًا للمخاطر، وخدمات استشارية استراتيجية.</p><p>وبالاستناد إلى فريق من المستشارين يتمتّعون بأكثر من <strong>21 عامًا من الخبرة المثبتة في السوق</strong>، نعمل حصريًا بما يخدم مصلحة عملائنا، ونوفّر تغطيات شفافة وموثوقة صُمّمت لحماية الأصول والأعمال والأفراد في بيئة مخاطر دائمة التغيّر.</p>"
-],
-
-team:[
-  "فريقنا",
-  "<br><p>في <strong>Sigma</strong> للاستشارات التأمينية، تكمن قوتنا في خبرة فريقنا ونزاهته والتزامه....</p>",
-  "<br><p>في <strong>Sigma</strong> للاستشارات التأمينية، تكمن قوتنا في خبرة فريقنا ونزاهته والتزامه.<br><p>يتكوّن فريقنا من محترفين مؤهلين في مجال التأمين، يتمتعون بخلفيات متنوعة في الاستشارات التأمينية، والاكتتاب، وإدارة المخاطر، ومعالجة المطالبات.<br><br>يقدّم كل عضو معرفة عملية بالسوق ونهجًا يركّز على العميل، مما يضمن أن تكون كل الحلول التي نقدّمها متينة تقنيًا وفعّالة تجاريًا.<br><p>نعمل كفريق استشاري موحّد، ونتعاون بشكل وثيق مع العملاء وشركات التأمين وإعادة التأمين لتقديم إرشادات واضحة ودعم فوري واستراتيجيات تأمينية مستدامة.<br><br>يُعد التطوير المهني المستمر والالتزام بأفضل الممارسات الدولية من الركائز الأساسية لثقافتنا، مما يتيح لنا مواكبة تطوّر معايير السوق.<br><p>ما يميّز فريقنا حقًا هو التزامه ببناء علاقات طويلة الأمد.<br><br>نحرص على فهم الاحتياجات الفريدة لكل عميل ونقف إلى جانبه طوال دورة حياة الوثيقة، من التقييم الأولي إلى تسوية المطالبات.<p>في <strong>Sigma</strong>، أنت مدعوم من فريق يعتبر مخاطرك وكأنها مخاطره الخاصة."
-],
-
-services:[
-  "خدماتنا",
-  "<br><p><strong>بالإضافة إلى خدمات الوساطة، نقدّم:</strong></p><p><br><ul><li>تقييم وتحليل المخاطر.</li><li>تحديد مصادر المخاطر وتقييمها لتصميم هياكل تأمينية فعّالة ومستدامة.</li><li>تصميم وتحسين برامج التأمين...</li></ul>",
-  "<br><p><strong>بالإضافة إلى خدمات الوساطة، نقدّم:</strong></p><p><br><ul><li>تقييم وتحليل المخاطر.</li><li><p>تحديد مصادر المخاطر وتقييمها لتصميم هياكل تأمينية فعّالة ومستدامة.</li><li><p>تصميم وتحسين برامج التأمين.</li><li><p>إعداد حلول تغطية مخصّصة، ومراجعة الوثائق القائمة، وتحسين الحدود والشروط وكفاءة التكاليف.</li><li><p>التفاوض والطرح في السوق.</li><li><p>الاستفادة من علاقاتنا القوية مع شركات التأمين وإعادة التأمين للحصول على أفضل الشروط ونطاق تغطية واسع وتسعير تنافسي.</li><li><p>الاستشارات في المطالبات ودعم المطالبات الجوهرية.</li><li><p>تقديم دعم عملي أثناء المطالبات، بما في ذلك الحالات المعقّدة وذات القيم العالية، لحماية مصالح عملائنا وتسريع التسويات.</li><li><p>مراجعة الوثائق والاستشارات المستمرة.</li><li><p>التقييم المستمر لبرامج التأمين لضمان توافقها مع تطوّر المخاطر والعمليات والمتطلبات التنظيمية.<p>آراء مستقلة.</li><li><p>تقديم مراجعات واستشارات مهنية حتى في حال وضع التغطية خارج شبكتنا.</li><li><p>يستفيد عملاؤنا من نهج استشاري قائم على الشفافية والخبرة التقنية والشراكة طويلة الأمد، بما يضمن أن يكون التأمين أداة استباقية لإدارة المخاطر وليس مجرد منتج تعاملي.</li></ul>"
-],
-
-vision:[
-  "رؤيتنا",
-  "<br>أن نكون جهة رائدة موثوقة في الاستشارات التأمينية، معترفًا بنا لتقديم حلول استراتيجية شفافة ومركّزة على العميل، تضع معايير جديدة للاحترافية والقيمة في قطاع التأمين....",
-  "<br>أن نكون جهة رائدة موثوقة في الاستشارات التأمينية، معترفًا بنا لتقديم حلول استراتيجية شفافة ومركّزة على العميل، تضع معايير جديدة للاحترافية والقيمة في قطاع التأمين.<p><br>نسعى إلى إعادة تعريف دور المستشار التأميني من خلال الانتقال من المعاملات إلى الشراكات طويلة الأمد، حيث يصبح التأمين أداة استباقية للحماية والمرونة والنمو المستدام."
-],
-
-ceo:[
-  "السيرة الذاتية للرئيس التنفيذي",
-  "<br><p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>أيمن فتوني</a></strong>.</p><p><strong>الرئيس التنفيذي – <strong>Sigma</strong> للاستشارات التأمينية.</strong></p><br><p><strong>نظرة تنفيذية عامة</strong></p><p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>أيمن فتوني</a></strong> هو الرئيس التنفيذي لشركة <strong>Sigma</strong> للاستشارات التأمينية، وهي شركة استشارية مستقلة متخصصة في الاستشارات التأمينية وتحليل المخاطر والحلول التأمينية الاستراتيجية. يتمتع بخبرة مهنية تتجاوز 21 عامًا، ويُعرف بدوره في دعم تطوير وتحديث ممارسات الاستشارات التأمينية في لبنان وعلى المستويين الإقليمي والدولي.",
-  "<br><p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>أيمن فتوني</a></strong>.</p><p><strong>الرئيس التنفيذي – <strong>Sigma</strong> للاستشارات التأمينية.</strong></p><br><p><strong>نظرة تنفيذية عامة</strong></p><p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>أيمن فتوني</a></strong> هو الرئيس التنفيذي لشركة <strong>Sigma</strong> للاستشارات التأمينية، وهي شركة استشارية مستقلة متخصصة في الاستشارات التأمينية وتحليل المخاطر والحلول التأمينية الاستراتيجية. يتمتع بخبرة مهنية تتجاوز 21 عامًا، ويُعرف بدوره في دعم تطوير وتحديث ممارسات الاستشارات التأمينية في لبنان وعلى المستويين الإقليمي والدولي.</p><br><p><strong>الخلفية المهنية</strong></p><p><strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>السيد فتوني</a></strong> بنى مسيرته المهنية على تطوير الاستشارات التأمينية كمنهج منظم وتحليلي يركّز على العميل. ويركّز عمله على تحويل التأمين من خدمة تعاقدية إلى أداة استراتيجية لإدارة المخاطر والتخطيط المالي. ويعتمد نهجه الاستشاري على الدقة والشفافية والتقييم المنهجي للمخاطر والتوافق طويل الأمد مع الأهداف المالية والتشغيلية للعملاء.</p><br><p><strong>الإنجازات الرئيسية والمحطات المهنية:</strong></p><ul><li>مؤسس ورئيس تنفيذي لشركة <strong>Sigma</strong> للاستشارات التأمينية، يقود نموذجًا استشاريًا مستقلاً قائمًا على التميّز المهني وليس الوساطة القائمة على المبيعات.</li><li>مؤلف بحث تأميني متخصص مسجّل رسميًا لدى مكتب الملكية الفكرية في وزارة الاقتصاد (رقم التسجيل 6377).</li><li>عضو في منظمة Million Dollar Round Table (MDRT)، وهي جمعية دولية مستقلة تمثّل التميّز والأخلاقيات والمعايير المهنية العالمية.</li><li>أكثر من عقدين من الخبرة في خدمة العملاء من الشركات والمؤسسات والأفراد.</li><li>تعاون واسع مع أسواق التأمين وإعادة التأمين الدولية.</li></ul><p><br><strong>الشهادات والتطوير المهني:</strong><br>يحمل <strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>السيد فتوني</a></strong> عدة شهادات مهنية وقيادية في التأمين وإدارة المخاطر، ما يعكس التزامه بالمعايير العالمية والتطوير المهني المستمر.<p><br><strong>الخبرة السوقية والعلاقات الاستراتيجية:</strong><br>من خلال التعاون مع شركات التأمين وإعادة التأمين المحلية والدولية، بنى <strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>السيد فتوني</a></strong> علاقات مهنية قوية تعزّز قدرة <strong>Sigma</strong> على تقديم حلول تأمينية تنافسية ومستدامة ومحكمة الهيكلة.<p><br><strong>فلسفة القيادة والرؤية:</strong><br>بصفته رئيسًا تنفيذيًا، يقود <strong><a href='https://www.linkedin.com/in/ftouni-ayman-852865b9' target='_blank'>أيمن فتوني</a></strong> شركة <strong>Sigma</strong> للاستشارات التأمينية بفلسفة تقوم على الاستقلالية والنزاهة المهنية والوضوح في تقديم الاستشارات. وتحت قيادته، تواصل <strong>Sigma</strong> تعزيز سمعتها كشريك استشاري موثوق للعملاء الذين يواجهون بيئات تأمينية معقّدة."
-],
-
-contact:[
-  "اتصل بنا",
-  "نظرة عامة على التواصل...",
-  `
-  <div class="contact-container">
-    <p><strong>العنوان:</strong>
-    بيروت – الرملة البيضاء<br>
-    مبنى الشرق الأوسط – الطابق الخامس
-    </p>
-
-    <p><strong>الهاتف:</strong> 01788669</p>
-    <p><strong>البريد الإلكتروني:</strong> <a href="mailto:management@sigma-leb.com">management@sigma-leb.com</a></p>
-
-    <a class="map-btn"
-       href="https://maps.app.goo.gl/pTd21eFbWSFNJcnt7"
-       target="_blank">
-      📍 فتح الموقع على خرائط Google
-    </a>
-
-    <div class="social-icons-contact">
-      <a href="https://wa.me/96103977867" target="_blank"><img src="whatsapp.png"></a>
-      <a href="https://www.instagram.com/sigma_insurance_" target="_blank"><img src="instagram.png"></a>
-      <a href="https://www.linkedin.com/in/ftouni-ayman-852865b9" target="_blank"><img src="linkedin.png"></a>
-      <a href="mailto:management@sigma-leb.com" target="_blank"><img src="email.png"></a>
-    </div>
-  </div>
-  `
-],
-
-why:[
-  "لماذا تختار Sigma",
-  "<br><strong>استشارات مستقلة ومركّزة على العميل.</strong><p>لسنا مرتبطين بأي شركة تأمين واحدة...",
-  `
-  <br><p><strong>استشارات مستقلة ومركّزة على العميل.</strong></p>
-  <p>لسنا مرتبطين بأي شركة تأمين واحدة. توصياتنا تستند حصريًا إلى ملف المخاطر الخاص بك ومصلحتك الفضلى.</p>
-
-  <br><p><strong>أكثر من مجرد وضع وثائق.</strong></p>
-  <p>نقدّم ما يتجاوز دور الوسيط التقليدي، من خلال تقييم المخاطر وتصميم البرامج وتحسين الوثائق وتقديم استشارات مستمرة.</p>
-
-  <br><p><strong>وصول قوي إلى الأسواق وإعادة التأمين.</strong></p>
-  <p>تتيح لنا علاقاتنا الراسخة مع شركات التأمين وإعادة التأمين المحلية والدولية التفاوض على أفضل شروط التغطية والتسعير.</p>
-
-  <br><p><strong>خبرة متقدمة في دعم المطالبات.</strong></p>
-  <p>نقف إلى جانب عملائنا عندما يكون الأمر في غاية الأهمية، ونوفّر دعمًا عمليًا في المطالبات، بما في ذلك الحالات المعقّدة وذات القيم العالية.</p>
-
-  <br><p><strong>نهج الشراكة طويلة الأمد.</strong></p>
-  <p>نركّز على بناء علاقات مستدامة ونكيّف حلولك التأمينية مع تطوّر مخاطر وأهداف عملك.</p>
-  `
-]
-
-}
+ar:{n_about:"من نحن",n_services:"خدماتنا",n_why:"لماذا Sigma",n_ceo:"القيادة",n_contact:"اتصل بنا",
+h1a:"استشارات مهنية.",h1b:"حماية قوية.",
+sub:"استشارات تأمينية مستقلة للشركات والمؤسسات والأفراد في لبنان والمنطقة.",
+cta1:"تحدّث إلى مستشار",cta2:"خدماتنا",
+f1:"عامًا من الخبرة المثبتة في السوق",f2:"عضو في Million Dollar Round Table",f3:"مستقلون – غير مرتبطين بشركة تأمين",
+t_about:"استشارة موثوقة قائمة على الاستقلالية",
+about1:"Sigma شركة وساطة تأمينية مستقلة تقدّم حلولًا مخصّصة وتقييمًا للمخاطر وخدمات استشارية استراتيجية. نعمل حصريًا بما يخدم مصلحة عملائنا.",
+about2:"يضم فريقنا خبرات في الاستشارات والاكتتاب وإدارة المخاطر ومعالجة المطالبات. نرافقك من التقييم الأولي حتى تسوية المطالبات، ونعتبر مخاطرك مخاطرنا.",
+vision:"رؤيتنا: أن نكون جهة رائدة موثوقة في الاستشارات التأمينية، ننتقل من المعاملات إلى شراكات طويلة الأمد يصبح فيها التأمين أداة استباقية للحماية والمرونة والنمو.",
+t_services:"ما نقدّمه بعد وضع الوثيقة",
+svc:[["تقييم وتحليل المخاطر","تحديد مصادر المخاطر وتقييمها لتصميم هياكل تأمينية فعّالة ومستدامة."],["تصميم وتحسين برامج التأمين","حلول تغطية مخصّصة ومراجعة الوثائق وتحسين الحدود والشروط وكفاءة التكاليف."],["التفاوض والطرح في السوق","علاقات قوية مع شركات التأمين وإعادة التأمين للحصول على أفضل الشروط والتسعير."],["الاستشارات في المطالبات","دعم عملي في المطالبات المعقّدة وذات القيم العالية لحماية مصالحك وتسريع التسوية."],["مراجعة الوثائق والاستشارات المستمرة","تقييم مستمر لضمان توافق برنامجك مع تطوّر المخاطر والعمليات والمتطلبات التنظيمية."],["آراء مستقلة","مراجعات واستشارات مهنية حتى في حال وضع التغطية خارج شبكتنا."]],
+t_why:"لماذا تختار Sigma",
+why:[["استشارات مستقلة ومركّزة على العميل","لسنا مرتبطين بأي شركة تأمين. توصياتنا تستند إلى ملف المخاطر الخاص بك."],["أكثر من مجرد وضع وثائق","تقييم المخاطر وتصميم البرامج وتحسين الوثائق واستشارات مستمرة."],["وصول قوي إلى الأسواق وإعادة التأمين","علاقات راسخة مع شركات التأمين وإعادة التأمين المحلية والدولية."],["خبرة في دعم المطالبات","نقف إلى جانبك عندما يكون الأمر في غاية الأهمية، بما فيها الحالات المعقّدة."],["شراكة طويلة الأمد","حلول تتكيّف مع تطوّر مخاطرك وأهدافك."]],
+t_ceo:"القيادة",ceoName:"أيمن فتوني",ceoRole:"المؤسس والرئيس التنفيذي",
+ceo1:"بخبرة تتجاوز 21 عامًا، يُعرف أيمن فتوني بدوره في تطوير الاستشارات التأمينية في لبنان وعلى المستويين الإقليمي والدولي. يحوّل نهجه التأمين من خدمة تعاقدية إلى أداة استراتيجية لإدارة المخاطر والتخطيط المالي.",
+ceo:["مؤسس نموذج استشاري مستقل قائم على التميّز المهني لا على المبيعات","مؤلف بحث تأميني مسجّل لدى مكتب الملكية الفكرية في وزارة الاقتصاد (رقم 6377)","عضو في Million Dollar Round Table (MDRT)","تعاون واسع مع أسواق التأمين وإعادة التأمين الدولية"],
+t_contact:"اتصل بنا",contactIntro:"حدّثنا عن مخاطرك، ونخبرك كيف تحمي نفسك منها.",addrL:"العنوان",addr:"الرملة البيضاء، بيروت<br>مبنى الشرق الأوسط، الطابق الخامس",phoneL:"الهاتف",map:"خرائط Google"}
 };
-
-
-
-const boxes=["team","services","vision","ceo","contact","why"];
-
-function renderFooter(){
-  const footer=document.getElementById("footer");
-  footer.innerHTML="";
-  boxes.forEach(id=>{
-    const box=document.createElement("div");
-    box.className="box";
-    box.style.backgroundImage=`url(${id}.jpg)`;
-    box.innerHTML=`<span class="label">${translations[currentLang][id][0]}</span><span class="arrow">➜</span>`;
-    box.onclick=()=>showContent(id);
-    footer.appendChild(box);
-  });
+const $=s=>document.querySelector(s);
+function setLang(l){
+  const t=T[l];
+  document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-k]').forEach(e=>e.innerHTML=t[e.dataset.k]);
+  $('#svc').innerHTML=t.svc.map(s=>`<div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+  $('#whyGrid').innerHTML=t.why.map(s=>`<div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+  $('#ceoList').innerHTML=t.ceo.map(s=>`<li>${s}</li>`).join('');
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+  try{localStorage.setItem('lang',l)}catch(e){}
 }
-
-function showContent(id){
-currentPage = id; // حفظ الصفحة الحالية
-  window.scrollTo({
-  top: 0,
-  behavior: "smooth"
-});
-
-
-
-
-  // ===== CONTACT PAGE =====
-if(id === "contact"){
-  const [title, shortText, fullText] = translations[currentLang][id];
-
-  document.getElementById("main-text").innerHTML = `
-    <div class="content-container">
-      <div class="content-text">
-        <h2>${title}</h2>
-        ${fullText}
-      </div>
-    <div class="content-image">
-          <img src="contact1.jpg">
-        </div>
-      </div>
-    `;
-    return;
-  }
-
-
-
-  // ===== باقي الصفحات =====
-  const [title, shortText, fullText] = translations[currentLang][id];
-
-  document.getElementById("main-text").innerHTML = `
-    <div class="content-container">
-      <div class="content-text">
-        <h2>${title}</h2>
-        <div id="shortText" style="text-align:left;">${shortText}</div>
-        <div id="fullText" style="text-align:left;">${fullText}</div>
-        <button id="readMoreBtn">${currentLang==="ar"?"اقرأ المزيد":"Read More"}</button>
-      </div>
-      <div class="content-image">
-        <img src="${id}1.jpg">
-      </div>
-    </div>
-  `;
-
-  document.getElementById("shortText").style.display="block";
-  document.getElementById("fullText").style.display="none";
-
- document.getElementById("readMoreBtn").onclick = () => {
-  const s = document.getElementById("shortText");
-  const f = document.getElementById("fullText");
-  const b = document.getElementById("readMoreBtn");
-
-  if(f.style.display === "none"){
-    // أولاً نعرض النص الكامل
-    s.style.display = "none";
-    f.style.display = "block";
-    
-    // بعد ثواني قصيرة، اعمل scroll للعنصر من فوق
-    setTimeout(() => {
-      f.scrollIntoView({behavior: "smooth", block: "start"});
-    }, 50);
-
-    b.innerText = currentLang === "ar" ? "اقرأ أقل" : "Read Less";
-  } else {
-    // إذا ضغطنا اقرأ أقل
-    s.style.display = "block";
-    f.style.display = "none";
-
-    // scroll لل shortText من فوق
-    setTimeout(() => {
-      s.scrollIntoView({behavior: "smooth", block: "start"});
-    }, 50);
-
-    b.innerText = currentLang === "ar" ? "اقرأ المزيد" : "Read More";
-  }
-};
-}
-
-// Language dropdown
-document.getElementById("langBtn").onclick=()=>{
-  const menu=document.getElementById("langMenu");
-  menu.style.display = menu.style.display==="block"?"none":"block";
-};
-
-function setLang(lang){
-  currentLang=lang;
-document.body.classList.remove("rtl");
-if(lang === "ar"){
-  document.body.classList.add("rtl");
-}
-  document.getElementById("langBtn").innerText=lang.toUpperCase()+" ▼";
-  document.getElementById("langMenu").style.display="none";
-  renderFooter();
-  showContent(currentPage); // يحدث الصفحة الحالية بدل ما يرجع للـ home
-}
-
-// Init
-renderFooter();
-showContent("home");
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+$('#yr').textContent=new Date().getFullYear();
+let init='en';try{init=localStorage.getItem('lang')||'en'}catch(e){}
+setLang(T[init]?init:'en');
 </script>
-
-
 </body>
 </html>
-
-
-
